@@ -22,10 +22,6 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _10th International F1TENTH Autonomous
-Racing Competition_. Rules can be modified overtime. The latest version
-can be found [here](https://iros2022-race.f1tenth.org/rules.html).
-
 Date: 2021-12-17
 
 **Table of content**
@@ -37,16 +33,13 @@ Date: 2021-12-17
 
 International F1TENTH Autonomous Racing Competition is a racing competition open to teams of all levels. Competing teams may consist of any number of members; however, each participant should be a member of only one team.
 
-The competition is organized in two variants:
+This competition will be held in-person competition.
 
-- In-Person competition, and
-- Virtual competition.
-
-Teams can register for the competition using a [registration form](https://icra2022-race.f1tenth.org/registration.html), where they select a single variant of the competition. Registration is open until April 11, 2022.
+Teams can register for the competition using a [registration form](https://icra2022-race.f1tenth.org/registration.html), where they select a single variant of the competition. Registration is open until November 11th, 2022.
 
 _Note: If the in-person competition gets canceled due to the ongoing pandemic situation, registered teams may compete in the virtual competition instead._
 
-The preferred communication method with the organizers is the _#ICRA2022_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
+The preferred communication method with the organizers is the KSMTE2022 channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenthxkorea/shared_invite/zt-1ibqf5yjq-CkG_z1XRhsZgBsCoSy7JiA).
 
 
 # 2. In-person (physical) competition
@@ -62,9 +55,7 @@ qualification and will be automatically registered to both races.
 
 ## 2.1 Vehicle classes
 
-1. The in-person competition distinguishes two vehicle classes: Restricted Class and Open Class.
-
-2. **Restricted Class** allows only cars that meet the following constraints:
+1. **Vehicle Class** allows only cars that meet the following constraints:
 
     1. The vehicle is constructed according to the official [bill of materials](https://f1tenth.readthedocs.io/en/stable/getting_started/build_car/bom.html). The teams are allowed to use components of similar or lower specifications.
     2. Each vehicle will be inspected as a part of qualification whether it meets the criteria. In case the criteria are not met, the vehicle is moved to the Open Class.
@@ -82,15 +73,10 @@ qualification and will be automatically registered to both races.
     9. _Other sensors_:
         Other sensors (IMUs, encoders, custom electronic speed controllers) are not restricted. Indoor GPS sensors (e.g. Marvelmind) are not allowed. In addition, in the spirit of the competition, components with significant internal computation power are prohibited.
 
-3. **Open Class** allows cars that do not fit into Restricted Class. These cars may compete, but they are not eligible for prizes and their ranking is kept separate. In addition, the following constraints are applied:
-
-    1. Car dimensions should be within 10% difference to the dimensions of the car required in the Restricted Class. This is to make sure that the car can fit comfortably in the racing track and that it can compete with other cars in the Head-to-Head race.
-    2. Only electric drive motors are allowed.
-
 
 ## 2.2 Track & racing environment
 
-The competition will take place in the [Pennsylvania Convetion Center](https://www.paconvention.com/). The characteristics of the environment where the track will be built are:
+The competition will take place in the [Ramada Plaza Jeju](https://korea-race.f1tenth.org/www.ramadajeju.co.kr/). The characteristics of the environment where the track will be built are:
 
 1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
 2. The room is surrounded by windows and “glass walls”. The windows will be covered by non-transparent material up to 50 cm from the ground to improve the perception. The room is bright, and the Sun can shine into it.
@@ -207,70 +193,3 @@ There will be two results tables based on these criteria.
 1. The first car that completes 10 laps wins.
 2. There will be two referees, one for each car.
 3. Each referee counts the lap for one car and is responsible for identifying the crashes.
-
-# 3. Virtual (simulation) competition
-
-## 3.1 General
-  1. The virtual competition will be completely done in an simulation environment only and no hardware is involved.
-
-  2. This simulation environment is based on the 2D Simulator F1TENTH GYM and is operated by the Riders.Ai competition platform. The F1TENTH virtual competition will be complete done in this environment only and teams need to submit their code in time to this platform.
-
-  3. The virtual competition will comprise two parts – *Time Trials* and *2 Vehicle Head-to-Head* race. Every participant must pass the Time Trials and will be automatically registered to both races.
-
-  4. F1TENTH reserves the right to reject any submission that we deem illegal due to circumstances such as exploiting the simulation environment. Therefore their source code submission will be examined by the race stuarts after the race.
-
-  5. The map used for all the races (Time Trials, Head-to-Head) will be the same. In the Time Trials this map will have added obstacles for the obstacle avoidance task.
-
-## 3.2 Registration, Training, Code Submission.
-
-1. All simulations are done on the Riders.ai competition platform
-
-2. Teams must register themselves for the 9th F1TENTH Autonomous Grand Prix on the Riders.Ai platform on their own with their team name.
-
-3. We will provide test environments (maps) for the teams to use this platform as a training and evaluation environment while they develop their code.
-
-4. Teams need to prepare their code with their local machine
-
-5. Teams need to submit their code with their local machine.
-
-6. All simulation event evaluations are done on the Riders.Ai cloud. Based on this evaluation the leaderboard will be created.
-
-7. We define deadlines for the submissions of the Time-Trial code and the Head-to-Head for the teams. No extensions are given.
-
-## 3.3 Time Trials
-
-1. The Time Trials in the F1TENTH simulation environment are here to define both the capabilities of the vehicles to race in a static environment with and without obstacles as well as for creation of the seeding in the Head-to-Head race.
-
-2. The Time Trials are single vehicle races only.
-
-3. The Time Trials consist of 2 races:
-
-  1. **Qualification** race: Race 2 laps of track as quickly as possible without collision into the walls (determines Grand Prix seeding). If an agent can finish without collision with the environment, it’ll receive a lap time and update its ranking on the leaderboard.
-
-  2. **Obstacle avoidance** race: Race 2 laps around the track with added obstacles unknown to participants. The car needs to go round 2 laps without collision. The location and the size of the obstacles will not be revealed prior to submission. Some example maps with obstacles will be provided.
-
-4. The submission of the Time Trial Code is done via the Riders.ai platform
-
-5. The code for both Qualification and Obstacle avoidance race needs to be the same.
-
-## 3.4 Head To Head Race
-
-1. The Head-to-Head race is a race with two cars on the track at the same time.
-
-2. The car that crosses the finish line first after 2 laps wins the race.
-
-3. The Head-to-Head race is a best of 3 trials. The car that wins two races moves on to the next round.
-
-  1. The third race is a tie-braker if the first two races are 1:1. In the third race, the cars starting again on their predifined P1 and P2 position. The car that is seeded in the qualification higher is located on P1.
-
-4. The cars start in alternating position (inside, outside) in each of the races.
-
-5. Seeding: The elimination bracket of the tournament will be filled by submissions that passed the obstacle avoidance test and seeded by the result of the timed trials. For example, with 8 teams, the bracket of the first round will be (#1 vs. #8, #2 vs. #7, #3 vs. #6, and #4 vs. #5).
-
-6. Overtaking: According to the circumstances, may be carried out on either the right or the left. Maneuvers liable to hinder other drivers, such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction, are strictly prohibited. The stewards will have the final say in whether a driver is in violation of the rule.
-
-7. Causing a collision (decided by the stewards) for more than 3 times will result in automatic disqualification of one car.
-
-8. Collisions at the fault of both vehicles will result in a redo trial. After 3 redos of the same case, both vehicles are disqualified.
-
-9. The stewards reserve the right to have the final say.
