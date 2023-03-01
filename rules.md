@@ -22,11 +22,7 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _9th International F1TENTH Autonomous
-Racing Competition_. Rules can be modified overtime. The latest version
-can be found [here](https://iros2021.f1tenth.org/rules.html).
-
-Date: 2021-08-02
+These rules are prepared for the German Grand Prix of the F1Tenth. Rules can be modified overtime.
 
 **Table of content**
 - ToC
@@ -35,21 +31,12 @@ Date: 2021-08-02
 
 # 1. General
 
-International F1TENTH Autonomous Racing Competition is a racing competition open to teams of all levels. Competing teams may consist of any number of members; however, each participant should be a member of only one team.
+International F1TENTH Autonomous Racing Competition is a racing competition open to teams of all levels. Competing teams may consist of any number of members; however, each participant should be a member of only one team. The competition is organized as an in-person event.
 
-The competition is organized in two variants:
-
-- In-Person competition, and
-- Virtual competition.
-
-Teams can register for the competition using a [registration form](https://iros2021.f1tenth.org/registration.html), where they select a single variant of the competition. Registration is open until July 31, 2021.
-
-_Note: If the in-person competition gets canceled due to the ongoing pandemic situation, registered teams may compete in the virtual competition instead._
-
-The preferred communication method with the organizers is the _#iros2021_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
+Teams can register for the competition using a [registration form](https://forms.gle/rTjyEu4NA9aojWBX8), where they select a single variant of the competition. Registration is open until July 31, 2021.
 
 
-# 2. In-person (physical) competition
+# 2. Competition
 
 1. The competition will comprise three parts – *Inspection*, *Time
 Trials* and *2 Vehicle Head-to-Head* race. Every participant must pass
@@ -90,12 +77,9 @@ qualification and will be automatically registered to both races.
 
 ## 2.2 Track & racing environment
 
-The competition will take place in the [Czech Institute of Informatics, Robotics and Cybernetics](http://ciirc.cvut.cz). The characteristics of the environment where the track will be built are:
+The competition will take place at the Lausitzring Germany. The characteristics of the environment where the track will be built are:
 
-1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
-2. The room is surrounded by windows and “glass walls”. The windows will be covered by non-transparent material up to 50 cm from the ground to improve the perception. The room is bright, and the Sun can shine into it.
-3. The track border is constructed from two air pipes of 13 cm diameters, placed on top of each other. They are made from aluminium and metal, secured with plastic holders. Keep in mind that there can be a gap between the pipes through which the LiDAR beams can pass.
-4. The track will fit into the area of size 28.5×11 m.
+1. TBD
 
 
 ## 2.3 Inspection
@@ -204,70 +188,3 @@ There will be two results tables based on these criteria.
 ### 2.5.4 Evaluation
 
 1. The first car that completes 10 laps wins. There will be two referees, one for each car.
-
-# 3. Virtual (simulation) competition
-
-## 3.1 General
-  1. The virtual competition will be completely done in an simulation environment only and no hardware is involved.
-
-  2. This simulation environment is based on the 2D Simulator F1TENTH GYM and is operated by the Riders.Ai competition platform. The F1TENTH virtual competition will be complete done in this environment only and teams need to submit their code in time to this platform.
-
-  3. The virtual competition will comprise two parts – *Time Trials* and *2 Vehicle Head-to-Head* race. Every participant must pass the Time Trials and will be automatically registered to both races.
-
-  4. F1TENTH reserves the right to reject any submission that we deem illegal due to circumstances such as exploiting the simulation environment. Therefore their source code submission will be examined by the race stuarts after the race.
-
-  5. The map used for all the races (Time Trials, Head-to-Head) will be the same. In the Time Trials this map will have added obstacles for the obstacle avoidance task.
-
-## 3.2 Registration, Training, Code Submission.
-
-1. All simulations are done on the Riders.ai competition platform
-
-2. Teams must register themselves for the 9th F1TENTH Autonomous Grand Prix on the Riders.Ai platform on their own with their team name.
-
-3. We will provide test environments (maps) for the teams to use this platform as a training and evaluation environment while they develop their code.
-
-4. Teams need to prepare their code with their local machine.
-
-5. Teams need to submit their code with their local machine.
-
-6. All simulation event evaluations are done on the Riders.Ai cloud. Based on this evaluation the leaderboard will be created.
-
-7. We define deadlines for the submissions of the Time-Trial code and the Head-to-Head for the teams. No extensions are given.
-
-## 3.3 Time Trials
-
-1. The Time Trials in the F1TENTH simulation environment are here to define both the capabilities of the vehicles to race in a static environment with and without obstacles as well as for creation of the seeding in the Head-to-Head race.
-
-2. The Time Trials are single vehicle races only.
-
-3. The Time Trials consist of 2 races:
-
-  1. **Qualification** race: Race 2 laps of track as quickly as possible without collision into the walls (determines Grand Prix seeding). If an agent can finish without collision with the environment, it’ll receive a lap time and update its ranking on the leaderboard.
-
-  2. **Obstacle avoidance** race: Race 2 laps around the track with added obstacles unknown to participants. The car needs to go round 2 laps without collision. The location and the size of the obstacles will not be revealed prior to submission. Some example maps with obstacles will be provided.
-
-4. The submission of the Time Trial Code is done via the Riders.ai platform
-
-5. The code for both Qualification and Obstacle avoidance race needs to be the same.
-
-## 3.4 Head To Head Race
-
-1. The Head-to-Head race is a race with two cars on the track at the same time.
-
-2. The car that crosses the finish line first after 2 laps wins the race.
-
-3. The Head-to-Head race is a best of 3 trials. The car that wins two races moves on to the next round.
-
-  1. The third race is a tie-braker if the first two races are 1:1. In the third race, the cars starting again on their predifined P1 and P2 position. The car that is seeded in the qualification higher is located on P1.
-
-4. The cars start in alternating position (inside, outside) in each of the races.
-
-5. Seeding: The elimination bracket of the tournament will be filled by submissions that passed the obstacle avoidance test and seeded by the result of the timed trials. For example, with 8 teams, the bracket of the first round will be (#1 vs. #8, #2 vs. #7, #3 vs. #6, and #4 vs. #5).
-
-6. Overtaking: According to the circumstances, may be carried out on either the right or the left. Maneuvers liable to hinder other drivers, such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction, are strictly prohibited. The stewards will have the final say in whether a driver is in violation of the rule.
-
-7. Causing a collision (decided by the stewards) for more than 3 times will result in automatic disqualification of one car.
-
-8. Collisions at the fault of both vehicles will result in a redo trial. After 3 redos of the same case, both vehicles are disqualified.
-
-9. The stewards reserve the right to have the final say.
