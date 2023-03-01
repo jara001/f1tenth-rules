@@ -22,11 +22,11 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _9th International F1TENTH Autonomous
+These rules are prepared for the _10th International F1TENTH Autonomous
 Racing Competition_. Rules can be modified overtime. The latest version
-can be found [here](https://iros2021.f1tenth.org/rules.html).
+can be found [here](https://iros2022-race.f1tenth.org/rules.html).
 
-Date: 2021-08-02
+Date: 2021-12-17
 
 **Table of content**
 - ToC
@@ -42,11 +42,11 @@ The competition is organized in two variants:
 - In-Person competition, and
 - Virtual competition.
 
-Teams can register for the competition using a [registration form](https://iros2021.f1tenth.org/registration.html), where they select a single variant of the competition. Registration is open until July 31, 2021.
+Teams can register for the competition using a [registration form](https://icra2022-race.f1tenth.org/registration.html), where they select a single variant of the competition. Registration is open until April 11, 2022.
 
 _Note: If the in-person competition gets canceled due to the ongoing pandemic situation, registered teams may compete in the virtual competition instead._
 
-The preferred communication method with the organizers is the _#iros2021_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
+The preferred communication method with the organizers is the _#ICRA2022_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
 
 
 # 2. In-person (physical) competition
@@ -90,12 +90,13 @@ qualification and will be automatically registered to both races.
 
 ## 2.2 Track & racing environment
 
-The competition will take place in the [Czech Institute of Informatics, Robotics and Cybernetics](http://ciirc.cvut.cz). The characteristics of the environment where the track will be built are:
+The competition will take place in the [Pennsylvania Convetion Center](https://www.paconvention.com/). The characteristics of the environment where the track will be built are:
 
 1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
 2. The room is surrounded by windows and “glass walls”. The windows will be covered by non-transparent material up to 50 cm from the ground to improve the perception. The room is bright, and the Sun can shine into it.
-3. The track border is constructed from two air pipes of 13 cm diameters, placed on top of each other. They are made from aluminium and metal, secured with plastic holders. Keep in mind that there can be a gap between the pipes through which the LiDAR beams can pass.
+3. The track border is constructed from one air pipes of 33 cm diameters. They are made from aluminium and metal, secured with plastic/wodden holders. Keep in mind that there can be a gap between the pipes through which the LiDAR beams can pass.
 4. The track will fit into the area of size 28.5×11 m.
+5. The track can be mapped in either the training sessions on each day or in the qualification session of each team. We are not providing a dedicated time slot for teams to map the track. Since many teams using SLAM algorithm or vision-based localization techniques, a dedicated **Map Creation** or **Mapping** session is not provided for the teams.
 
 
 ## 2.3 Inspection
@@ -124,13 +125,13 @@ The competition will take place in the [Czech Institute of Informatics, Robotics
 
 2. The race consists of two heats. Each heat lasts for 5 minutes, and the goal is to drive a single lap in as short time as possible and/or to drive as many complete laps as possible. Crashing and stopping the car does not pause the heat timer.
 
-3. The teams are allowed to change the configuration of their algorithms in between the heats, and even during the heat. When the configuration is changed during the heat, the car must stand still. In other words, the teams cannot update the configuration on-line while the car moves.
+3. Each team is provided two dedicated time slot for their vehicle to qualify. No time extensions are given and after the 5 minutes we move on to the next time slot and the next team. If a team is not able to run the car in this dedicated time slot, the qualification phase is not passed for this team.
 
-4. The map (track layout) is **known** a priori. The teams are encouraged to map the track prior to the race (a time slot for the mapping will be provided).
+4. The teams are allowed to change the configuration of their algorithms in between the heats, and even during the heat. When the configuration is changed during the heat, the car must stand still. In other words, the teams cannot update the configuration on-line while the car moves.
 
-5. The track will contain several static obstacles of size from 12×12×30 cm up to 35×32×30 cm, made from LiDAR perceivable material (e.g., cardboard). The intention is to make time trial race closer to head-to-head race, but still simpler.
+5. The map (track layout) is **known** a priori and the track layout does not change over the whole competition. Keep in mind that cars crash into the walls and the layout of the track might slightly shift a little bit. Please consider this in your algorithms.
 
-6. Crashing into the obstacle is penalized as discussed later.
+6. The final score for the qualification is two parts: Firstly, based on the ranking of the fastest laptimes you receive points. E.g. with 10 teams the fastest team receives 10 points, second fastest 9 points, thrid fastest 8 points …. and so on. Secondly, based on the number of consecutive uninterrupted laps, a ranking of the teams is created and therefore the teams receive points. E.g. with 10 teams the team with the most laps receives 10 points, second team 9 points, thrid team 8 points …. and so on. The final score is the sum of both scores.
 
 ### 2.4.3 Requirements for Time Trial qualification
 
@@ -159,21 +160,21 @@ There will be two results tables based on these criteria.
 
 1. The Head-to-Head race is a race with two cars on the track at the same time.
 
-2. The track will be simpler and wider compared to timed trials. The teams are encouraged to map the track prior to the race (a time slot for the mapping will be provided).
+2. The racetrack has the same layout as in the training and qualification sessions.
 
 3. The algorithms must not intentionally hinder the opponent or perform any damage to it. Specifically, manoeuvres such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction are strictly prohibited. The referees will have the final say in whether a driver is in violation of the rule.
 
-4. Depending on the number of participants, the race will be organized either as
-    1. an all-play-all tournament with ties broken by an additional match, or
-    2. a knockout tournament with brackets seeded by results of the time trial.
+4. The head-to-head race will be organized as a knockout tournament with brackets seeded by results of the qualification. For example, with 8 teams, the bracket of the first round will be (#1 vs. #8, #2 vs. #7, #3 vs. #6, and #4 vs. #5).
 
-5. Each of the competing cars starts at its own starting line. Starting lines will be located at the opposite parts of the track.
+5. One head-to-head race consists of two teams racing against each other. One race has a dedicated timeslot of around 10 minutes. If one team is not showing up in these 10 minutes and let their car race, the other team won. If at some point along the race a car is not able to drive anymore (e.g. hardware issue, software not running etc.) and the teams are not able to restart the car withing the 10 minutes, the other team one the race. No time extensions are given and after the 10 minutes we move on to the next time slot and the next team.
 
-6. Overtaking may be carried out on either the right or the left.
+6. Each of the competing cars starts at its own starting line. Starting lines will be located at the opposite parts of the track.
 
-7. As opposed to time trials, no reconfiguration is allowed during the race, except after the crash, as described below.
+7. Overtaking may be carried out on either the right or the left.
 
-8. Ultimately, organizers reserve the right to assign blame in the case of vehicle collision in the head-to-head tournament.
+8. As opposed to time trials, no reconfiguration is allowed during the race, except after the crash, as described below.
+
+9. Ultimately, organizers reserve the right to assign blame in the case of vehicle collision in the head-to-head tournament.
 
 
 ### 2.5.2 Requirements for qualification
@@ -193,17 +194,19 @@ There will be two results tables based on these criteria.
 
 2. Touching the opponent is not penalized unless one of the cars significantly diverges from its expected trajectory.
 
-3. Upon crashing the border of the track, the team has to fix the track and place the car on the side of the track at the place where the car first crashed the border. Then, the car can continue the race. During all of this, the opponent’s car must not be restricted by the team’s actions. The penalty is the time spent on fixing the track and placing the car.
+3. Upon crashing the border of the track, the team has to fix the track and place the car on the side of the track at the place where the car first crashed the border. Then, the car can continue the race. During all of this, the opponent’s car must not be restricted by the team’s actions and the opponent is allowed to further race without stopping its car. The penalty is the time spent on fixing the track and placing the car.
 
 4. Upon crashing the opponent, these steps are applied:
 
     1. Referees judge which car is at fault.
-    2. Upon the first crash of the faulty car and when both cars can continue the race, a penalty of two laps is applied to the faulty car. Otherwise, the faulty car is disqualified, and the opponent wins by default.
-    3. Both cars are placed next to each other at the place decided by the referees, and teams have two minutes to re-configure their algorithms. After that time, the race is resumed by the referees.
+    2. Both cars are placed next to each other at the place decided by the referees
+    3. The referees restart the race.
 
 ### 2.5.4 Evaluation
 
-1. The first car that completes 10 laps wins. There will be two referees, one for each car.
+1. The first car that completes 10 laps wins.
+2. There will be two referees, one for each car.
+3. Each referee counts the lap for one car and is responsible for identifying the crashes.
 
 # 3. Virtual (simulation) competition
 
@@ -226,7 +229,7 @@ There will be two results tables based on these criteria.
 
 3. We will provide test environments (maps) for the teams to use this platform as a training and evaluation environment while they develop their code.
 
-4. Teams need to prepare their code with their local machine.
+4. Teams need to prepare their code with their local machine
 
 5. Teams need to submit their code with their local machine.
 
