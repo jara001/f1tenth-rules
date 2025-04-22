@@ -1,3 +1,6 @@
+ICRA 2025 (24)
+https://icra2025-race.roboracer.ai/rules.html
+
 CDC 2024 Race (22)
 https://cdc2024-race.f1tenth.org/rules.html
 
