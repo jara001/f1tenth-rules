@@ -22,11 +22,12 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _15th International F1TENTH Autonomous
-Racing Competition_. Rules can be modified overtime. The latest version
-can be found [here](https://icra2024-race.f1tenth.org/rules.html).
+These rules are prepared for the _18th International F1TENTH Autonomous
+Racing Competition_. Rules are subject to change.
 
-Date: 2023-6-14
+The lastest version can be found [here](https://iv2024-race.f1tenth.org/rules.html).
+
+Date: 2024-05-25
 
 **Table of content**
 - ToC
@@ -39,9 +40,9 @@ International F1TENTH Autonomous Racing Competition is a racing competition open
 
 The competition is organized as an in-person competition.
 
-Teams can register for the competition using a [registration form](https://icra2024-race.f1tenth.org/registration.html), where they select a single variant of the competition.
+Teams can register for the competition using a [registration form](https://iv2024-race.f1tenth.org/registration.html), where they select a single variant of the competition.
 
-The preferred communication method with the organizers is the _#ICRA2024_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
+The preferred communication method with the organizers is the _#IV2024_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
 
 # 2. In-person (physical) competition
 
@@ -109,6 +110,8 @@ The competition will take place inside [Huntington Place Detroit](https://www.hu
 1. *Touching* means moving the object by less than 5 cm. Moving by greater distance is called *Crashing*.
 
 2. Moving the track border by any distance is called *Crashing*.
+
+3. The track will contain several checkpoints, marked with a line across the track. Starting line is not a checkpoint.
 
 ### 2.4.2 General
 
@@ -195,6 +198,6 @@ There will be two results tables based on these criteria.
 
 ### 2.5.4 Evaluation
 
-1. The first car that completes the designated number of laps (announced at the race) wins.
-2. There will be three referees.
-3. Two referees count the laps for each car, and the third is responsible for identifying the crashes.
+1. The first car that completes 8 laps wins.
+2. There will be two referees, one for each car.
+3. Each referee counts the lap for one car and is responsible for identifying the crashes.
