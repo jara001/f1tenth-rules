@@ -84,26 +84,52 @@ qualification and will be automatically registered to both races.
 
 Only cars that meet the following constraints will be allowed to participate:
 
-    1. The vehicle is constructed according to the official [bill of materials](https://f1tenth.readthedocs.io/en/foxy_test/getting_started/build_car/bom.html#bill-of-materials). The teams are allowed to use components of similar or lower specifications.
-    2. Each vehicle will be inspected as a part of qualification whether it meets the criteria. In case the criteria are not met, the vehicle is disqualified.
-    4. _Chassis_:
-        Any chassis listed as *1:10 scale* car is allowed. Preferably **1:10 Traxxas** (e.g., [TRA74054](https://traxxas.com/products/models/electric/ford-fiesta-st-rally), [TRA6804R](https://traxxas.com/products/models/electric/6804Rslash4x4platinum), [TRA68086](https://traxxas.com/products/models/electric/slash-4x4-tsm)), but generally, any chassis within 15% of the traxxass cars’ dimensions is allowed ( 238mm ≤ Width ≤ 341mm, 454 mm ≤ Length ≤ 654mm). Both 4WD and 2WD are permitted.
-    5. _Main Computation Unit_:
-        Due to supply chain issues, we’re removing constraints on the main computation unit. Any suitable computing unit that physically fits on the vehicle within the size limit is allowed. Examples inlcude Nvidia Jetson Xavier NX, Nvidia Jetson Orin Nano, Nvidia Jetson TX2, Nvidia Jetson Nano, Intel NUC, Raspberry Pi, etc. In the spirit of the competition, all computation must be done onboard the vehicle.
-    6. _LiDAR_:
-        [**Hokuyo UST-30LX**](https://www.hokuyo-aut.jp/search/single.php?serial=233), its equivalent, or anything of lower specifications is allowed. The main observed characteristics are: detection range (30 m), scanning frequency (40 Hz), and angular resolution (0.25°).
-    7. _Camera_:
-        Both *monocamera* (e.g. Logitech C270, Logitech C920, Raspberry Pi Camera Module V2, Arducam) and *stereocameras* (e.g. Intel Realsense, ZED) are allowed.
-    8. _Engine_:
-        Only brushless DC motors are allowed. The [**Velineon 3500 kV**](https://traxxas.com/products/parts/motors/velineon3500motor), its equivalent, or anything of lower specifications regarding power and torque are allowed. The car must have **only one** DC motor driving the wheels. The motor could either be sensored or sensorless as long as it meets the specifications
-    9. _Other sensors_:
-        Other sensors (IMUs, encoders, custom electronic speed controllers) are not restricted. Indoor GPS sensors (e.g. Marvelmind) are not allowed.
-    10. _Tires_:
-        There are no resutrictions on the tires used by the car. Any and all tires that fit the wheels of the chassis are permitted.
-    11. _Battery_:
-        The drive motor should be driven at most by one (or any equivalent combination) battery rated at most **4s**. There are no limitations on the capacity of the battery. More than one battery can be used on the car as long as only one 4s battery powers the motor. Teams are encouraged to have spare batteries to allow fast replacements in case the battery gets discharged at an inconvenient time.
-    12. _Transmitter Spot_:
-        The car must have a designated spot at the front-half of the car of atleast 8cm x 12cm for a transmitter. The spot should be easily accessible and nothing should be on top of the transmitter. This spot will be used for a transmitter that will be used for time-keeping.
+1. The vehicle is constructed according to the official [bill of materials](https://f1tenth.readthedocs.io/en/foxy_test/getting_started/build_car/bom.html#bill-of-materials). The teams are allowed to use components of similar or lower specifications.
+
+2. Each vehicle will be inspected as a part of qualification whether it meets the criteria. In case the criteria are not met, the vehicle is disqualified.
+
+3. _Chassis_:
+    Any chassis listed as *1:10 scale* car is allowed. Preferably **1:10 Traxxas** (e.g., [TRA74054](https://traxxas.com/products/models/electric/ford-fiesta-st-rally), [TRA6804R](https://traxxas.com/products/models/electric/6804Rslash4x4platinum), [TRA68086](https://traxxas.com/products/models/electric/slash-4x4-tsm)), but generally, any chassis within 15% of the traxxass cars’ dimensions is allowed ( 238mm ≤ Width ≤ 341mm, 454 mm ≤ Length ≤ 654mm). Both 4WD and 2WD are permitted.
+
+4. _Main Computation Unit_:
+    Due to supply chain issues, we’re removing constraints on the main computation unit. Any suitable computing unit that physically fits on the vehicle within the size limit is allowed. Examples inlcude Nvidia Jetson Xavier NX, Nvidia Jetson Orin Nano, Nvidia Jetson TX2, Nvidia Jetson Nano, Intel NUC, Raspberry Pi, etc. In the spirit of the competition, all computation must be done onboard the vehicle.
+
+5. _LiDAR_:
+    [**Hokuyo UST-30LX**](https://www.hokuyo-aut.jp/search/single.php?serial=233), its equivalent, or anything of lower specifications is allowed. The main observed characteristics are: detection range (30 m), scanning frequency (40 Hz), and angular resolution (0.25°).
+
+6. _Camera_:
+    Both *monocamera* (e.g. Logitech C270, Logitech C920, Raspberry Pi Camera Module V2, Arducam) and *stereocameras* (e.g. Intel Realsense, ZED) are allowed.
+
+7. _Engine_:
+    Only brushless DC motors are allowed. The [**Velineon 3500 kV**](https://traxxas.com/sites/default/files/3351-INST-KC1682%20Velineon%203500_ML_120813.pdf), its equivalent, or anything of lower specifications regarding power and torque are allowed. The car must have **only one** DC motor driving the wheels. The motor could either be sensored or sensorless as long as it meets the specifications
+
+9. _Other sensors_:
+    Other sensors (IMUs, encoders, custom electronic speed controllers) are not restricted. Indoor GPS sensors (e.g. Marvelmind) are not allowed.
+
+10. _Tires_:
+    There are no resutrictions on the tires used by the car. Any and all tires that fit the wheels of the chassis are permitted.
+
+11. _Battery_:
+    The drive motor should be driven at most by one (or any equivalent combination) battery rated at most **4s**. There are no limitations on the capacity of the battery. More than one battery can be used on the car as long as only one 4s battery powers the motor. Teams are encouraged to have spare batteries to allow fast replacements in case the battery gets discharged at an inconvenient time.
+
+12. _Transmitter Spot_:
+    The car must have a designated spot at the front-half of the car of atleast 8cm x 12cm for a transmitter. The spot should be easily accessible and nothing should be on top of the transmitter. This spot will be used for a transmitter that will be used for time-keeping.
+
+Additionally, during open practice and head-to-head races, the car is required to be equipped with the following:
+
+1. The car must be equipped with front bumper made of soft material, e.g., [TRA7436](https://traxxas.com/products/parts/7436) + [TRA7437](https://traxxas.com/products/parts/7437) +  [TRA7415X](https://traxxas.com/products/parts/7415X). This solution is compatible with _Slash_. Model of _Ford Fiesta_ already has this bumper.
+
+    1. The bumper has to be soft to minimize the damage to the opponent’s car in case of a cras.
+    2. The bumper must have a minimum of 5 cm of soft material.
+    3. The bumper must be attached to the car in a way that it does not fall off at any time during the head-to-head race.
+
+2. The car must be equipped with a rear bumper which is at least as high as the front bumper.
+3. The car has to be easily perceivable by the opponent’s LiDAR. Therefore, the car **must occupy a space of size at least 12×12 cm at every horizontal plane between 10 to 30 cm above the ground**. Usually, this is achieved by placing a 12x12x20cm box on top of the car at the back.
+
+    1. The box should be made of LiDAR perceivable material (e.g., cardboard) and not be reflective.
+    2. Teams may use any shape object placed at the back of the car as long as the car has a LiDAR “signature” of at least 12x12cm at every horizontal plane between 10 to 30 cm above the ground.
+    3. As long as the object results in the desired LiDAR signature, the object can have any additional aeorodynamic shapes added like fins, wings, etc.
+    4. The box maybe of any color as long as it is easily perceivable by the LiDARs of the other cars.
 
 
 ## 2.2 Track & racing environment
@@ -112,13 +138,13 @@ The competition will take place inside [Georgia World Congress Center](https://w
 
 1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
 2. The track border is constructed from single height air ducts of 33 cm diameter. Keep in mind that **there wille be gaps** between the pipes through which the LiDAR beams can pass.
-4. The track can be mapped in either the training sessions on each day or in the qualification session of each team. We are providing dedicated time slots for each team to map the track. Although many teams are using SLAM algorithm or vision-based localization techniques, a dedicated **Map Creation** or **Mapping** session is provided for the teams.
-5. The track will be atleast 4 car widths (120cm) wide everywhere around the track to allow for and incentivise overtaking.
-6. The track will contain a mix of choke points, sharp hairpins, wide straights and extra wide corners to test the algorithms of the cars. The track borders will contain holes on parts of the track to test out the robustness of the algorithms.
-7. No humans are allowed on the track at all times, except to repair the track or obstacles, or to remove a stopped car.
-8. Removing the car from or placing the car on the track should always be done at the border of the track from the outside.
-9. If the car is not able to drive anymore, the team has to remove the car from the track as soon as possible.
-10. All days of the competition will be streamed live on twitch on the official Roboracer channel. The stream will be available for the public to watch.
+3. The track can be mapped in either the training sessions on each day or in the qualification session of each team. We are providing dedicated time slots for each team to map the track. Although many teams are using SLAM algorithm or vision-based localization techniques, a dedicated **Map Creation** or **Mapping** session is provided for the teams.
+4. The track will be atleast 4 car widths (120cm) wide everywhere around the track to allow for and incentivise overtaking.
+5. The track will contain a mix of choke points, sharp hairpins, wide straights and extra wide corners to test the algorithms of the cars. The track borders will contain holes on parts of the track to test out the robustness of the algorithms.
+6. No humans are allowed on the track at all times, except to repair the track or obstacles, or to remove a stopped car.
+7. Removing the car from or placing the car on the track should always be done at the border of the track from the outside.
+8. If the car is not able to drive anymore, the team has to remove the car from the track as soon as possible.
+9. All days of the competition will be streamed live on twitch on the official Roboracer channel. The stream will be available for the public to watch.
 
 ## 2.3 Practice
 
