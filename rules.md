@@ -22,9 +22,9 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _20th International F1TENTH Autonomous
+These rules are prepared for the _21th International F1TENTH Autonomous
 Racing Competition_. Rules are subject to change. The latest version
-can be found [here](https://itsc2024-race.f1tenth.org/rules.html).
+can be found [here](https://iros2024-race.f1tenth.org/rules.html).
 
 Date: 2024-07-09
 
@@ -39,7 +39,7 @@ International F1TENTH Autonomous Racing Competition is a racing competition open
 
 The competition is organized as an in-person competition.
 
-Teams can register for the competition using a [registration form](https://itsc2024-race.f1tenth.org/rules.html).
+Teams can register for the competition using a [registration form](https://forms.gle/J7azZZEnGBqvmPtt8).
 
 The preferred communication method with the organizers is the _#ITSC2024_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
 
@@ -80,7 +80,7 @@ qualification and will be automatically registered to both races.
     10. _Tires_:
         There are no resutrictions on the tires used by the car. Any and all tires that fit the wheels of the chassis are permitted.
     11. _Battery_:
-        The drive motor should be driven at most by one battery rated at **3s**. There are no limitations on the capacity of the battery. More than one battery can be used on the car as long as only one 3s battery powers the motor. Teams are encouraged to have spare batteries to allow fast replacements in case the battery gets discharged at an inconvenient time.
+        The drive motor should be driven at most by one battery rated at **4s**. There are no limitations on the capacity of the battery. More than one battery can be used on the car as long as only one 4s battery powers the motor. Teams are encouraged to have spare batteries to allow fast replacements in case the battery gets discharged at an inconvenient time.
 
 3. **Open Class** allows cars that do not fit into Restricted Class. These cars may compete, but they are not eligible for prizes, their ranking is kept separate, and you might not have any peers competing in the class. In addition, the following constraints are applied:
 
@@ -90,7 +90,7 @@ qualification and will be automatically registered to both races.
 
 ## 2.2 Track & racing environment
 
-The competition will take place inside [Edmonton Convention Centre](https://www.edmontonconventioncentre.com/). The characteristics of the environment where the track will be built are:
+The competition will take place inside [Abu Dhabi National Exhibition Centre (ADNEC)](https://www.adnec.ae/en). The characteristics of the environment where the track will be built are:
 
 1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
 2. The track border is constructed from single height air ducts of 33 cm diameter. Keep in mind that there can be a gap between the pipes through which the LiDAR beams can pass.
@@ -211,3 +211,18 @@ There will be two results tables based on these criteria.
 1. The first car that completes 10 laps wins.
 2. There will be a total of three referees.
 3. One referee will be assigned to each car that is solely responsible to count laps. The third referee is tasked with enforcing penalties and rule violations.
+
+## 3. Virtual (simulation) competition
+### 3.1 General
+
+1. The virtual competition will be completely done in an simulation environment only and no hardware is involved.
+
+2. This simulation environment is based on the [AutoDrive Ecosystem](https://autodrive-ecosystem.github.io/). The F1TENTH virtual competition will be complete done in this environment only and teams need to submit their code in time to this platform.
+
+3. The virtual competition will comprise two parts – *Time Trials* and *2 Vehicle Head-to-Head* race. Every participant must pass the Time Trials and will be automatically registered to both races.
+
+4. F1TENTH reserves the right to reject any submission that we deem illegal due to circumstances such as exploiting the simulation environment. Therefore their source code submission will be examined by the race stuarts after the race.
+
+5. The map used for all the races (Time Trials, Head-to-Head) will be the same. In the Time Trials this map will have added obstacles for the obstacle avoidance task.
+
+6. All details will be posted on the official page for the virtual competition [here](https://autodrive-ecosystem.github.io/competitions/f1tenth-sim-racing-iros-2024/).
