@@ -22,11 +22,10 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _15th International F1TENTH Autonomous
-Racing Competition_. Rules can be modified overtime. The latest version
-can be found [here](https://icra2024-race.f1tenth.org/rules.html).
+These rules are prepared for the _17th International F1TENTH Autonomous
+Racing Competition_. Rules can be modified overtime.
 
-Date: 2023-6-14
+Date: 2023-12-20
 
 **Table of content**
 - ToC
@@ -39,9 +38,9 @@ International F1TENTH Autonomous Racing Competition is a racing competition open
 
 The competition is organized as an in-person competition.
 
-Teams can register for the competition using a [registration form](https://icra2024-race.f1tenth.org/registration.html), where they select a single variant of the competition.
+Teams can register for the competition using a [registration form](https://cpsweek2024-race.f1tenth.org/rules.html), where they select a single variant of the competition.
 
-The preferred communication method with the organizers is the _#ICRA2024_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
+The preferred communication method with the organizers is the _#cpsweek2024-race_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
 
 # 2. In-person (physical) competition
 
