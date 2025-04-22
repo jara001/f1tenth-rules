@@ -22,11 +22,10 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _20th International F1TENTH Autonomous
-Racing Competition_. Rules are subject to change. The latest version
-can be found [here](https://itsc2024-race.f1tenth.org/rules.html).
+These rules are prepared for the _23th International F1TENTH Autonomous
+Racing Competition_. Rules are subject to change.
 
-Date: 2024-07-09
+Date: October 25, 2024
 
 **Table of content**
 - ToC
@@ -39,21 +38,19 @@ International F1TENTH Autonomous Racing Competition is a racing competition open
 
 The competition is organized as an in-person competition.
 
-Teams can register for the competition using a [registration form](https://itsc2024-race.f1tenth.org/rules.html).
-
-The preferred communication method with the organizers is the _#ITSC2024_ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
+The preferred communication method with the organizers is the _#boston2024-competition _ channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU).
 
 # 2. In-person (physical) competition
 
 1. The competition will comprise three parts – *Inspection and Orientation*, *Time
-Trials* and *2 Vehicle Head-to-Head* race. Every participant must pass
-qualification and will be automatically registered to both races.
+Trials* and *Two-Vehicle Head-to-Head* race. Every participant will be automatically registered for both races (subject to qualification as detailed later).
 
 2. Teams registered to the in-person competition need to provide and build a F1TENTH car by themselves according to the constraints listed below. In addition, each team must have a unique vehicle (i.e., a research lab may not field six teams with one car).
 
 3. To increase the quality of the future F1TENTH competitions, the winner of each race is encourage to publish the code of their algorithm under an open-source license in the [F1TENTH repository](https://github.com/f1tenth) on Github.
 
-4. In order to better accomodate all participating teams, all teams should have at most 4 team members present at the race space (includes sideline and seating area) during the event. Teams with more than 4 members will be required to either register as separate teams or discard/cycle their members during the event.
+4. In order to better accomodate all participating teams, all teams should have at most 5 team members present at the race space (includes sideline and seating area) during the event. Teams with more than 5 members will be required to either register as separate teams or discard/cycle their members during the event.
+
 
 
 ## 2.1 Vehicle classes
@@ -90,20 +87,25 @@ qualification and will be automatically registered to both races.
 
 ## 2.2 Track & racing environment
 
-The competition will take place inside [Edmonton Convention Centre](https://www.edmontonconventioncentre.com/). The characteristics of the environment where the track will be built are:
+The competition will take place inside [Boston University](https://www.bu.edu/). The characteristics of the environment where the track will be built are:
 
-1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
-2. The track border is constructed from single height air ducts of 33 cm diameter. Keep in mind that there can be a gap between the pipes through which the LiDAR beams can pass.
+1. The surface is flat and carpeted.
+
+2. The track border is constructed from corrugated cardboards (subject to change) with a height of 30.5 cm. Keep in mind that there can be gaps at certain locations of the track which the LiDAR beams can pass.
+
 3. The track will fit into an area of around 30×10 m.
-4. The track can be mapped in either the training sessions on each day or in the qualification session of each team. We are not providing dedicated time slots for each team to map the track. Although many teams are using SLAM algorithm or vision-based localization techniques, a dedicated **Map Creation** or **Mapping** session is not provided for the teams.
-5. The track will be atleast 3 car widths (90cm) wide everywhere around the track to allow for overtaking.
+
+4. The track can be mapped during the preparation session in the morning. We will be providing dedicated time slots for each team to map the track.
+
+5. The track will be at least 3 car widths (90cm) wide everywhere around the track to allow for overtaking.
+
 
 
 ## 2.3 Inspection
 
 1. The purpose of the Inspection is to check that the hardware of the autonomous cars meets the competition requirements and the cars are not dangerous for the environment, opponents, and people.
 
-2. The inspection of the vehicles is done on the first competition day in the morning.
+2. The inspection of the vehicles is done first in the morning.
 
 3. The inspection is done by the race referees.
 
@@ -123,17 +125,15 @@ The competition will take place inside [Edmonton Convention Centre](https://www.
 
 1. Time Trial is a race with a goal to drive through the designated track as fast as possible. The idea is to push the algorithms to their limits.
 
-2. The race consists of two heats. Each heat lasts for 5 minutes, and the goal is to drive a single lap in as short time as possible and/or to drive as many complete laps as possible. Crashing and stopping the car does not pause the heat timer.
+2. Each team has two attempts. Each attempt lasts for 5 minutes, and the goal is to drive a single lap in as short time as possible and/or to drive as many complete laps as possible. Stopping the car does not pause the heat timer.
 
-3. The heat sessions are split in two with a one one-hour practice session in between. The teams have to book a time slot in each session. The schedule of the sessions will be shared with the teams before the race.
+3. Each team is provided two dedicated time slot for their Time Trial. Every team will finish their first attempt before we move on to the second attempts. The schedule will be shared with the teams on the morning of the event. No time extensions are given and after the 5 minutes we move on to the next time slot and the next team. There will be 1-2 minutes of dedicated time to switch from one team to the next. If a team is not able to run the car in this dedicated time slot, we automatically move to the next team according to the schedule.
 
-4. Each team is provided two dedicated time slot for their vehicle to qualify. No time extensions are given and after the 5 minutes we move on to the next time slot and the next team. There will be 1-5 minutes of dedicated time to switch from one team to the next. If a team is not able to run the car in this dedicated time slot, the qualification phase is not passed for this team.
+4. The teams are allowed to change the configuration of their algorithms in between the attempts, and even during their designated time slot. When the configuration is changed during the heat, the car must stand still. In other words, the teams cannot update the configuration on-line while the car is moving.
 
-5. The teams are allowed to change the configuration of their algorithms in between the heats, and even during the heat. When the configuration is changed during the heat, the car must stand still. In other words, the teams cannot update the configuration on-line while the car moves.
+5. The map (track layout) is **known** a priori and the track layout does not change over the whole competition. Keep in mind that cars crash into the walls and the layout of the track might slightly shift a little bit. Please consider this in your algorithms.
 
-6. The map (track layout) is **known** a priori and the track layout does not change over the whole competition. Keep in mind that cars crash into the walls and the layout of the track might slightly shift a little bit. Please consider this in your algorithms.
-
-7. The final score for the qualification is two parts: Firstly, based on the ranking of the **fastest laptimes** you receive points. E.g. with 10 teams the fastest team receives 10 points, second fastest 9 points, thrid fastest 8 points …. and so on. Secondly, based on the number of **consecutive uninterrupted laps**, a ranking of the teams is created and therefore the teams receive points. E.g. with 10 teams the team with the most laps receives 10 points, second team 9 points, thrid team 8 points …. and so on. The final score is the sum of both scores. Note that the best lap times and number of laps has to be obtained from the same uninterrupted session.
+6. The final score for the qualification is two parts: Firstly, based on the ranking of the **fastest laptimes** you receive points. E.g. with 10 teams the fastest team receives 10 points, second fastest 9 points, thrid fastest 8 points …. and so on. Secondly, based on the number of **consecutive uninterrupted laps**, a ranking of the teams is created and therefore the teams receive points. E.g. with 10 teams the team with the most laps receives 10 points, second team 9 points, thrid team 8 points …. and so on. The final score is the sum of both scores. Note that the best lap times and number of laps has to be obtained from the same uninterrupted session.
 
 ### 2.4.3 Requirements for Time Trial qualification
 
@@ -143,7 +143,7 @@ The competition will take place inside [Edmonton Convention Centre](https://www.
 
 ### 2.4.4 Penalties
 
-1. Touching the border of the track or a static obstacle is not penalized. Excessive, repeated touching (up to the organizers) is considered a crash.
+1. Touching the border of the track or a static obstacle is not penalized. Excessive, repeated touching (exact number to be determined by the organizers) is considered a crash.
 
 2. Upon crashing the track border or the static obstacle the team has to stop the car and move it (by hand or using the remote control) to the latest position before crash. After repairing the track and returning the obstacles to their appropriate locations, the race may continue. The time spent on moving the car to the checkpoint and repairing the track is considered the penalty.
 
@@ -162,13 +162,13 @@ There will be two results tables based on these criteria.
 
 1. The Head-to-Head race is a race with two cars on the track at the same time.
 
-2. The racetrack has the same layout as in the training and qualification sessions.
+2. The racetrack has the same layout as in the Time Trial.
 
 3. The algorithms must not intentionally hinder the opponent or perform any damage to it. Specifically, manoeuvres such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction are strictly prohibited. The referees will have the final say in whether a driver is in violation of the rule.
 
 4. The head-to-head race will be organized as a single-elimination knockout tournament with brackets seeded by results of the qualification. For example, with 8 teams, the bracket of the first round will be (#1 vs. #8, #2 vs. #7, #3 vs. #6, and #4 vs. #5).
 
-5. Before the start of **each** head-to-head race, **both** teams will be tested for obstacle avoidance and are required to use the same code for the race. Any violations to this rule could result in disqualification of the violating team (up to the organizers).
+5. Before the start of **each** head-to-head race, **both** teams will be tested for obstacle avoidance and are required to use the same code for the race. Any violations to this rule could result in disqualification of the violating team (determined by the organizers).
 
 6. One head-to-head race consists of two teams racing against each other. One race has a dedicated timeslot of around 10 minutes. If one team is not showing up in these 10 minutes and let their car race, the other team won. If at some point along the race a car is not able to drive anymore (e.g. hardware issue, software not running etc.) and the teams are not able to restart the car withing the 10 minutes, the other team wins the race. No time extensions are given and after the 10 minutes we move on to the next time slot and the next team.
 
