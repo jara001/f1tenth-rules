@@ -22,7 +22,7 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-Date: 2021-12-17
+Date: 2023-10-11
 
 **Table of content**
 - ToC
@@ -35,11 +35,9 @@ International F1TENTH Autonomous Racing Competition is a racing competition open
 
 This competition will be held in-person competition.
 
-Teams can register for the competition using a [registration form](https://icra2022-race.f1tenth.org/registration.html), where they select a single variant of the competition. Registration is open until November 11th, 2022.
+Teams can register for the competition using a [registration form](https://icra2022-race.f1tenth.org/registration.html).
 
-_Note: If the in-person competition gets canceled due to the ongoing pandemic situation, registered teams may compete in the virtual competition instead._
-
-The preferred communication method with the organizers is the KSMTE2022 channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenthxkorea/shared_invite/zt-1ibqf5yjq-CkG_z1XRhsZgBsCoSy7JiA).
+The preferred communication method with the organizers is the ICCAS2023 channel on [F1TENTH-teams Slack](https://join.slack.com/t/f1tenthxkorea/shared_invite/zt-1ibqf5yjq-CkG_z1XRhsZgBsCoSy7JiA).
 
 
 # 2. In-person (physical) competition
@@ -58,25 +56,38 @@ qualification and will be automatically registered to both races.
 1. **Vehicle Class** allows only cars that meet the following constraints:
 
     1. The vehicle is constructed according to the official [bill of materials](https://f1tenth.readthedocs.io/en/stable/getting_started/build_car/bom.html). The teams are allowed to use components of similar or lower specifications.
-    2. Each vehicle will be inspected as a part of qualification whether it meets the criteria. In case the criteria are not met, the vehicle is moved to the Open Class.
+    2. Each vehicle will be inspected as a part of qualification whether it meets the criteria. In case the criteria are not met, the vehicle cannot participate.
     3. **F1TENTH Competition is a battle of algorithms. Any hardware that should turn the odds in your favor is not allowed**.
     4. _Chassis_:
         Any chassis listed as *1:10 scale* car is allowed. Preferably **1:10 Traxxas** (e.g., [TRA74054](https://traxxas.com/products/models/electric/ford-fiesta-st-rally), [TRA6804R](https://traxxas.com/products/models/electric/6804Rslash4x4platinum), [TRA68086](https://traxxas.com/products/models/electric/slash-4x4-tsm)), but generally, any chassis with similar dimensions is allowed. Both 4WD and 2WD are permitted.
     5. _Main Computation Unit_:
-        **Nvidia Jetson Xavier NX**, Equivalents to the Nvidia Jetson NX (e.g. Nvidia Jetson TX2, Nvidia Jetson Nano), or anything of equal or lower GPU and CPU specification is allowed. Examples of possible computation units could be: Raspberry Pi, Arduino, Beaglebone.
+        **Nvidia Jetson Xavier NX & Nvidia Orin NX (AGX)**, Equivalents to the Nvidia Jetson NX (e.g. Nvidia Jetson TX2, Nvidia Jetson Nano), or anything of equal or lower GPU and CPU specification is allowed. Examples of possible computation units could be: Raspberry Pi, Arduino, Beaglebone.
     6. _LiDAR_:
         [**Hokuyo UST-10LX**](https://www.hokuyo-aut.jp/search/single.php?serial=167), its equivalent, or anything of lower specifications is allowed. The main observed characteristics are: detection range (10 m), scanning frequency (40 Hz), and angular resolution (0.25°).
     7. _Camera_:
         Both *monocamera* (e.g. Logitech C270, Logitech C920, Raspberry Pi Camera Module V2, Arducam) and *stereokameras* (e.g. Intel Realsense, ZED) are allowed.
     8. _Engine_:
         Only brushless DC motors are allowed. The [**Velineon 3500 kV**](https://traxxas.com/products/parts/motors/velineon3500motor), its equivalent, or anything of lower specifications regarding power and torque are allowed.
-    9. _Other sensors_:
+    9. _Battery_:
+
+        a) 4S Battery size: 4838145, capacity: 5000 mAh, connection jack: XT90, [Battery recommended model link](http://rclife.co.kr/product/product_detail.asp?product_number=179110), [Requires purchase of Li-Po extension cable](http://rclife.co.kr/product/product_detail.asp?product_number=101217)
+
+        b) lithium polymer battery charger instructions:
+          - Multipurpose battery charger
+          - Requires Balance Charge support
+          - Requires charging safety device function
+          - Recommended model: [IMAX B6](http://rclife.co.kr/product/product_detail.asp?product_number=109032)
+          - [Recommended purchase of charging cable (XT90)](http://rclife.co.kr/product/product_detail.asp?product_number=150352)
+
+![image](https://korea-race23.f1tenth.org/images/regulator_e.PNG)
+
+    10. _Other sensors_:
         Other sensors (IMUs, encoders, custom electronic speed controllers) are not restricted. Indoor GPS sensors (e.g. Marvelmind) are not allowed. In addition, in the spirit of the competition, components with significant internal computation power are prohibited.
 
 
 ## 2.2 Track & racing environment
 
-The competition will take place in the [Ramada Plaza Jeju](https://korea-race.f1tenth.org/www.ramadajeju.co.kr/). The characteristics of the environment where the track will be built are:
+The competition will take place in the [SonoClam Yeosu](https://www.sonohotelsresorts.com/yeosu). The characteristics of the environment where the track will be built are:
 
 1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
 2. The room is surrounded by windows and “glass walls”. The windows will be covered by non-transparent material up to 50 cm from the ground to improve the perception. The room is bright, and the Sun can shine into it.
@@ -144,7 +155,7 @@ There will be two results tables based on these criteria.
 
 ### 2.5.1 General
 
-1. The Head-to-Head race is a race with two cars on the track at the same time.
+1. The Head-to-Head race is a race with two cars on the track at the same time on the same track but from opposite starting points.
 
 2. The racetrack has the same layout as in the training and qualification sessions.
 
@@ -190,6 +201,6 @@ There will be two results tables based on these criteria.
 
 ### 2.5.4 Evaluation
 
-1. The first car that completes 10 laps wins.
+1. The first car that completes 8 laps wins.
 2. There will be two referees, one for each car.
 3. Each referee counts the lap for one car and is responsible for identifying the crashes.
