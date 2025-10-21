@@ -22,9 +22,9 @@ h2, h3, h4, h5, h6 {
 }
 </style>
 
-These rules are prepared for the _24th International Roboracer Autonomous
+These rules are prepared for the _25th International Roboracer Autonomous
 Racing Competition_. Rules are subject to change. The latest version
-can be found [here](http://icra2025-race.roboracer.ai/rules.html).
+can be found [here](http://iv2025-race.roboracer.ai/rules.html).
 
 Date: 2025-02-03
 
@@ -41,7 +41,7 @@ The competition is organized as an in-person competition.
 
 Teams can register for the competition using a [registration form](https://forms.gle/S13buonfEA4VgzHN8).
 
-The preferred communication method with the organizers is the _#ICRA2025_ channel on [Roboracer-teams Slack](https://join.slack.com/t/robo-racer/shared_invite/zt-2sfu4qr7p-3oe27mCnH98muwRR9uEAbg).
+The preferred communication method with the organizers is the _#IV2025_ channel on [Roboracer-teams Slack](https://join.slack.com/t/robo-racer/shared_invite/zt-2sfu4qr7p-3oe27mCnH98muwRR9uEAbg).
 
 # 2. In-person (physical) competition
 
@@ -134,7 +134,7 @@ Additionally, during open practice and head-to-head races, the car is required t
 
 ## 2.2 Track & racing environment
 
-The competition will take place inside [Georgia World Congress Center](https://www.gwcca.org/georgia-world-congress-center). The characteristics of the environment where the track will be built are:
+The competition will take place inside [Grand Hotel Italia Cluj ](https://grandhotelitaliacluj.ro/en/). The characteristics of the environment where the track will be built are:
 
 1. The surface is flat and reflective. Therefore, LiDAR beams may reflect from the ground and measure the surrounding area rather than the ground. Similarly, depth cameras have problems with proper ground detection.
 2. The track border is constructed from single height air ducts of 33 cm diameter. Keep in mind that **there wille be gaps** between the pipes through which the LiDAR beams can pass.
