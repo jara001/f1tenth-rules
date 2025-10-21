@@ -1,3 +1,6 @@
+IV 2025 (25)
+https://iv2025-race.roboracer.ai/rules.html
+
 ICRA 2025 (24)
 https://icra2025-race.roboracer.ai/rules.html
 
