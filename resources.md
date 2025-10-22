@@ -1,3 +1,6 @@
+Techfest, IIT Bombay (26)
+https://roboracer.ai/events
+
 IV 2025 (25)
 https://iv2025-race.roboracer.ai/rules.html
 
