@@ -106,6 +106,7 @@ Organizers reserve the right to change the rules applied in the competition.
 
 ## Definitions
 
+- Car
 - Track: Space where we drive, muhehe
 - Heat: Single instance of n-teams racing on the track. A race can be composed on multiple heats.
 - Session: Block of specific competition part.
@@ -184,6 +185,12 @@ The competition rules should specify:
 - Maximum size (e.g., area) of the track.
 - List of used track features.
 
+### General track notes
+
+- The surface friction may slightly differ across the track.
+- When the track is delimited by a set of pipes (on top of each other) there might be gaps between them.
+
+
 ### Track Features
 
 A list of possible track features follow. Competition rules will specify, which of them (might) apply.
@@ -196,6 +203,20 @@ Track contains parts that do not lead to the finish line. (I mean like a "trap d
 #### Open walls
 
 Track borders are not closed, i.e., there are vertical gaps in them.
+
+_Note: I think it is better to have it "CSS" way_
+
+```
+=================     H      =================
+      pipe            O             pipe
+=================     R      =================
+                      I
+  VERTICAL GAP        Z        VERTICAL GAP
+                      .
+=================     G      =================
+      pipe            A             pipe
+=================     P      =================
+```
 
 Gaps might be in the inner walls as well as in the outside walls.
 
@@ -338,9 +359,9 @@ Qualification is a session testing the autonomous capabilities of the racing car
 
 - Complete a single lap without crashing into anything. Anything can be:
 
-  - Track borders
-  - Obstacles
-  - Other cars
+    - Track borders
+    - Obstacles
+    - Other cars
 
 - Qualification is done with a single racing car on the track.
 - Only inspected and approved car can be in a qualification.
@@ -501,6 +522,10 @@ Below a list of possible competition models follows. Competition rules specify w
 
 All teams are racing in the same cup.
 
+
+#### Single Cup + Final Four
+
+All teams are racing in the same cup using double elimination bracket, but the finals (with the top four teams) are performed using single elimination bracket.
 
 #### Double Cup (??? Cup, Master Cup)
 
