@@ -11,18 +11,20 @@ h1 {
 }
 h1::before {
   counter-increment: h1;
-  content: counter(h1)  ". ";
+  /*content: counter(h1)  ". ";*/
 }
 h2 {
   counter-reset: h3;
 }
 h2::before {
   counter-increment: h2;
-  content: counter(h1) "." counter(h2) ". ";
+  /*content: counter(h1) "." counter(h2) ". ";*/
+  content: counter(h2) ". ";
 }
 h3::before {
   counter-increment: h3;
-  content: counter(h1) "." counter(h2) "." counter(h3) ". ";
+  /*content: counter(h1) "." counter(h2) "." counter(h3) ". ";*/
+  content: counter(h2) "." counter(h3) ". ";
 }
 h3 {
   counter-reset: h4;
@@ -74,6 +76,12 @@ In the rules, we should cover:
 - Qualification
 - Timed Race
 - Head-to-Head Race
+
+On the other hand I want to avoid:
+
+- Duplicit rules (e.g., parts about the box on the car).
+- Rules that are not used anymore (or not used at all).
+- Change will/must into may in parts where the rules might not be applied because of the competition setting (e.g., small competitions have different need than big competitions).
 
 ## General
 These rules apply for all official in-person RoboRacer competitions.
@@ -169,6 +177,8 @@ Other sensors are not restricted.
     - The box maybe of any color as long as it is easily perceivable by the LiDARs of the other cars.
 - There has to be a free USB-A connector on the car computer to be used during the competition.
 
+_Note: Koreans allow parts of the competition to be driven without a box (when there is only one car on the track). I'd say we force it all the way._
+
 
 ## Competition Area
 
@@ -191,6 +201,13 @@ The competition rules should specify:
 
 - The surface friction may slightly differ across the track.
 - When the track is delimited by a set of pipes (on top of each other) there might be gaps between them.
+
+
+### Track behaviour
+
+_Note: I want to make it as a collection of rules "how to behave on the track"._
+
+_Note: Eventually, "racer stance" should be here as well._
 
 
 ### Track Features
@@ -276,6 +293,8 @@ _Note: Competition rules should specify: registration method, requirements, dead
 
 ## Eligibility
 
+_Note: I wanted to add something in between -- you are registered, but can you actually attend the competition?_
+
 The team is eligible to attend the competition as long as:
 
 - Registration fee is paid.
@@ -303,6 +322,8 @@ When possible, the practice track should contain all track features used during 
 
 _Note: When this happens, there should be another practice session so they can map._
 
+_Second note: Basically before every racing part there should be a practice session on the same track layout. It might be a full practice or just a mapping session._
+
 Opt-in practices are designated on a first-come-first-serve basis.
 
 During the practice sessions:
@@ -315,7 +336,11 @@ Upon decision, a special practice session for mapping the track may be issued.
 
 ### Practice variants
 
+_Note: I will do variants in this way. They might show differently based on your CSS, but they should be quite minimal; "list-like"._
+
 A list of possible practice variants follows. Competition rules specify which of them apply.
+
+_Note: Maybe add mapping practice as another variant; slightly different rules should apply there, e.g., speed limit._
 
 
 #### Shared Practice (Group)
@@ -338,8 +363,16 @@ Practice session where the track is reserved for one team only.
 - Teams are not allowed to obstructing other teams by any means (e.g., leaving a stationary car on the track outside of the designated area).
 - Teams are not allowed to endanger other teams and cars by an inappropriate behaviour.
 
+_Note: Racing violations are not applied here._
+
+_Note: Penalties are not the same as violations._
+
 
 ## Inspection
+
+_Note: In our case the inspection is to check whether it matches the submitted (and approved) hardware list._
+
+_What to do when it is different?_
 
 The purpose of the Inspection is to check that the hardware of the autonomous cars meets the competition requirements and the cars are not dangerous for the environment, opponents, and people.
 
@@ -364,6 +397,12 @@ Qualification is a session testing the autonomous capabilities of the racing car
 - Only inspected and approved car can be in a qualification.
 - The Qualification may be merged with Time Trial.
     - In this case the obstacle avoidance capability has to be checked separately during a dedicated session.
+
+Teams register for the Qualification slot in a FIFO way.
+
+There are no penalties. Crashing results into another try. (Up to the time limit.)
+
+Organizers might add more slots based on the success rate of the teams.
 
 
 ## Time Trial
@@ -397,6 +436,8 @@ Time Trial is a race with a goal to drive through the designated track as fast a
 - Touching the border of the track is not penalized. Excessive, repeated touching (up to the organizers) is considered a crash.
 
 - Upon crashing the track border the team has to stop the car and move it (by hand or using the remote control) to the latest position before crash. After repairing the track, the race may continue. The time spent on moving the car to the checkpoint and repairing the track is considered the penalty.
+
+_Note: Violations should be here as well, but I want to have them somewhere in one place._
 
 
 ### Evaluation
@@ -443,6 +484,10 @@ A point is given for every team that has worse scoring.
 
 ## Head-to-Head Race
 
+_Note: This is still really under heavy development._
+
+_Outline: What?, General overview, starting position, race start, race rules, penalities, etc._
+
 Head-to-Head race is a race with multiple cars on the track at the same time.
 
 ~~Before the start of each head-to-head race, both teams will be tested for obstacle avoidance and are required to use the same code for the race. Any violations to this rule could result in disqualification of the violating team (up to the organizers).~~
@@ -456,7 +501,7 @@ Head-to-Head race is a race with multiple cars on the track at the same time.
 
 ~~One head-to-head race consists of two teams racing against each other. One race has a dedicated timeslot of around 10 minutes. If one team is not showing up in these 10 minutes and let their car race, the other team won. If at some point along the race a car is not able to drive anymore (e.g. hardware issue, software not running etc.) and the teams are not able to restart the car withing the 10 minutes, the other team wins the race. No time extensions are given and after the 10 minutes we move on to the next time slot and the next team.~~
 
-One head-to-head race consists of two teams racing against each other. One race has a dedicated timeslot, e.g., 10 minutes.
+- One head-to-head race consists of two teams racing against each other. One race has a dedicated timeslot, e.g., 10 minutes.
 
 _Note: Add something about starting on time, regardless of the teams._
 
@@ -464,33 +509,40 @@ _Note: Add something about starting on time, regardless of the teams._
 
 ~~Both competing cars start from the same starting line used in the qualifications.~~
 
-Both competing cars start for the same starting line.
+_Note: Add 'starting positions: pole position? until second corner, start is repeated on crash'_
 
-    The teams will start side-by-side seperated by one car width (30cm) from each other.
-    For the first round, the team that ranked higher in qualifications chooses the starting position (left or right). The other team starts on the opposite side.
-    In the second round, the teams switch sides. The team that started on the left side in the first round starts on the right side in the second round.
-    Should a third round be necessary, a coin flip will determine the starting position. The team that ranked higher in qualifications will call the coin flip (i.e heads or tails). The team that wins the coin flip chooses the starting position.
+- Both competing cars start for the same starting line.
 
-Overtaking may be carried out on either the right or the left.
+    - The teams will start side-by-side seperated by one car width (30cm) from each other.
+    - For the first round, the team that ranked higher in qualifications chooses the starting position (left or right). The other team starts on the opposite side.
+    - In the second round, the teams switch sides. The team that started on the left side in the first round starts on the right side in the second round.
+    - Should a third round be necessary, a coin flip will determine the starting position. The team that ranked higher in qualifications will call the coin flip (i.e heads or tails). The team that wins the coin flip chooses the starting position.
 
-As opposed to time trials, no reconfiguration is allowed during the race, except after a crash, as described below.
+_TODO: How the race starts._
 
-Ultimately, organizers reserve the right to assign blame in the case of vehicle collision in the head-to-head tournament.
+- Overtaking may be carried out on either the right or the left.
 
-Collisions are judged by the referees.
+- As opposed to time trials, no reconfiguration is allowed during the race, except after a crash, as described below.
 
-    Collisions with track boundaries do not stop the race. The team that crashed into the track boundary must fix the track and place the car at the location of the crash. The opponent is allowed to continue. The crashed team bears the burden of the time spent on fixing the track and placing the car.
-    Light side-bumps and slow-speed nudges are not penalized and do not stop the race.
-    High-impact crashes that result in the displacement of one or both cars on crash result in a stoppage of the race.
-    If a car crashes into the opponent, the referees will judge which car is at fault.
-    Both cars will be restarted at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
-    A crash is not considered a warning unless judged by the referees.
-    Crashes that result in a warning include but are not limited to "malicious" crashes where the autonomous car did not attempt to slow down or steer away from the opponent.
-    Under special circumstances, the referees may decide to give a warning to a team with the option of stopping the race to address the issue. The team has a maximum of 5 minutes to fix the issue and resume the race.
-    After 3 warnings, the team is disqualified and the opponent automatically wins.
-    If the team that was crashed into is able to autonomously detect and recover from the crash by stopping on the side of the track, that team is granted an extra head-start of 1 meter before the restart (i.e the at-fault car is placed 3 meters behind the other car).
+- Ultimately, organizers reserve the right to assign blame in the case of vehicle collision in the head-to-head tournament.
+
+_TODO: Rework following part._
+
+- Collisions are judged by the referees.
+    - Collisions with track boundaries do not stop the race. The team that crashed into the track boundary must fix the track and place the car at the location of the crash. The opponent is allowed to continue. The crashed team bears the burden of the time spent on fixing the track and placing the car.
+    - Light side-bumps and slow-speed nudges are not penalized and do not stop the race.
+    - High-impact crashes that result in the displacement of one or both cars on crash result in a stoppage of the race.
+    - If a car crashes into the opponent, the referees will judge which car is at fault.
+    - Both cars will be restarted at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
+    - A crash is not considered a warning unless judged by the referees.
+    - Crashes that result in a warning include but are not limited to "malicious" crashes where the autonomous car did not attempt to slow down or steer away from the opponent.
+    - Under special circumstances, the referees may decide to give a warning to a team with the option of stopping the race to address the issue. The team has a maximum of 5 minutes to fix the issue and resume the race.
+    - After 3 warnings, the team is disqualified and the opponent automatically wins.
+    - If the team that was crashed into is able to autonomously detect and recover from the crash by stopping on the side of the track, that team is granted an extra head-start of 1 meter before the restart (i.e the at-fault car is placed 3 meters behind the other car).
 
 **Tournament type**
+
+_Note: This will be merged into tournament types._
 
 The head-to-head race will be organized as a double-elimination tournament with two brackets seeded by results of the qualification.
 
@@ -531,13 +583,14 @@ All teams are racing in the same cup.
 
 All teams are racing in the same cup using double elimination bracket, but the finals (with the top four teams) are performed using single elimination bracket.
 
+
 #### Double Cup (??? Cup, Master Cup)
 
 During the seeding, the participants are split into two groups, cups. Note that the rules may differ between the cups.
 
 Admission to Master Cup (with respect to the seeding) is done as follows:
 
-- Master Cup contains up to the half of the team roster.
+- Master Cup may contain up to the half of the team roster.
 - First 4 teams automatically proceed.
 - Up to the first half, all teams have an opportunity to either join or not.
 - The rest of the master cup teams may be filled by teams that placed top 3 in the last 3 years (1100 days).
@@ -559,13 +612,11 @@ Upon crashing the border of the track, the team has to fix the track and place t
 
 Upon crashing the opponent, these steps are applied:
 
-Referees call the crash and signal for it by raising the red flag.
+- Referees call the crash and signal for it by raising the red flag.
+- Referees judge which car is at fault.
+- Both cars are placed at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
+- The referees restart the race with a green flag.
 
-Referees judge which car is at fault.
-
-Both cars are placed at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
-
-The referees restart the race with a green flag.
 
 ### Evaluation
 
@@ -584,11 +635,11 @@ One referee will be assigned to each car and is solely responsible to call flag 
 
 Registration form -> ??? + Sending all materials -> REGISTERED/ELIGIBLE
 
-ELIGIBLE + On-site Registration -> ATTENDING
-ATTENDING + Inspection -> INSPECTED
-INSPECTED + Qualification -> QUALIFIED
-QUALIFIED + Time Trial -> CUP
-CUP + Head-to-Head -> PLACED
+- ELIGIBLE + On-site Registration -> ATTENDING
+- ATTENDING + Inspection -> INSPECTED
+- INSPECTED + Qualification -> QUALIFIED
+- QUALIFIED + Time Trial -> CUP
+- CUP + Head-to-Head -> PLACED
 
 
 ----
