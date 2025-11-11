@@ -91,9 +91,13 @@ With every competition instance, these rules might be altered by specific / addi
 These rules are organized as follows:
 ...
 
-Violating the rules may result into a team warning. Upon receiving three warnings, the team may be disqualified from the competition. Multiple disqualification and repeated misbehaviour may result into a ban.
+Violating the rules may result into a team warning. Upon receiving three warnings, the team may be disqualified from the competition. Multiple disqualification and repeated misbehaviour may result into a ban, i.e., unability to attend future competitions.
+    - Note that warnings are induced on whole teams not individuals.
 
-!! WE HAVE TO DIFFERENTIATE BETWEEN THIS WARNING AND THE WARNING FROM HEAD-TO-HEAD!!_
+_!! WE HAVE TO DIFFERENTIATE BETWEEN THIS WARNING AND THE WARNING FROM HEAD-TO-HEAD!!_
+
+_I would call them strikes. But maaaaybe we don't need to differentiate between them._
+
 
 ## Competition rules
 
@@ -121,7 +125,9 @@ Organizers reserve the right to change the rules applied in the competition.
 - Whistle
 - Overtakes?
 - Track section
-- Warning
+- Penalties:
+- Violations: Rules that result into warnings?
+- Warning: Issued for violating the rules. Three warnings may lead to disqualification from the competition.
 - Disqualification.
 - Flags: When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current round.
@@ -172,7 +178,7 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - Recommended: VESC
 6. CPU
     - No limits, but all computation during the race has to be done onboard the vehicle.
-    - Recommended: Xavier, Orin, NUC... dunno what to write here
+    - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
 7. LiDAR
     - Single plane only.
     - _Felix: Do we want to add this limit when we want to add bridges?_
@@ -210,22 +216,24 @@ _J: Not sure now..._
 
 ## Track
 
-Racing track is...
+Racing track is a delimited area used for racing.
 
 The competition rules must specify:
 
 - Nature of the surface (flatness, reflectiveness, material).
-- Nature of the room.
-- Type of delimiters (air ducts, cardboard boxes).
+- Nature of the room (e.g., walls/windows, ceiling type).
+- Type of delimiters (e.g., air ducts, cardboard boxes).
 - Height of delimiters.
 - Maximum size (e.g., area) of the track.
 - List of used track features.
 
 ### General track notes
 
-- The surface friction may slightly differ across the track.
+- The surface friction may naturally slightly differ across the track.
+- When the room is surrounded by windows or semi-transparent surfaces, it might result into incorrect sensor measurements.
 - When the track is delimited by a set of pipes (on top of each other) there might be gaps between them.
-- When multiple tracks are present, their parameters may differ.
+- Due to the car tilting, the sensors might see over the track borders.
+- When multiple tracks are present, their parameters, features and overall nature may differ.
 
 
 ### Track behaviour
@@ -233,6 +241,14 @@ The competition rules must specify:
 _Note: I want to make it as a collection of rules "how to behave on the track"._
 
 _Note: Eventually, "racer stance" should be here as well._
+
+
+### Violations
+
+- Driving outside of the track is generally not allowed.
+    - Exception is testing the car in very slow speeds.
+
+- Not adhering to track behaviour...
 
 
 ### Track Features
