@@ -1,10 +1,12 @@
 # RoboRacer Rules
+## Version: 3.0.0-draft
 _Note: This is a draft of v3 rules. Commentary will be removed in the final version._
 
 <!-- https://discourse.devontechnologies.com/t/css-for-markdown-numbered-headings/71404/3 -->
 <style>
 body {
   counter-reset: h1;
+  counter-reset: p;
 }
 h1 {
   counter-reset: h2;
@@ -33,6 +35,15 @@ h4::before {
   counter-increment: h4;
   content: counter(h4, lower-alpha) ". ";
 }
+p::before {
+  counter-increment: p;
+  content: "§ " counter(p);
+  margin-right: 1rem;
+  font-weight: bold;
+}
+hr {
+  counter-reset: p;
+}
 </style>
 <!--
 <style>
@@ -55,7 +66,7 @@ h2, h3, h4, h5, h6 {
 -->
 
 ## Outline
- The main concept is to go though v2 rules, and filter out those that are not required anymore. In general, v3 should be ready for **all** competitions, introducing harmony a transparency to the overall competition environment.
+The main concept is to go though v2 rules, and filter out those that are not required anymore. In general, v3 should be ready for **all** competitions, introducing harmony a<!--and?--> transparency to the overall competition environment.
 
 Current idea is to provide a set of rules (also, general rules) and then, optionally, competition modifications (also, additional rules).
 
@@ -79,22 +90,31 @@ In the rules, we should cover:
 
 On the other hand I want to avoid:
 
-- Duplicit rules (e.g., parts about the box on the car).
+- Duplicit rules (e.g., parts about the box on the car). <!--replace with references-->
 - Rules that are not used anymore (or not used at all).
 - Change will/must into may in parts where the rules might not be applied because of the competition setting (e.g., small competitions have different need than big competitions).
 
+---
+
 ## General
+
+<!--Add reference to RFC for MUST, MAY, SHOULD, ... This makes defining rules a lot easier: https://datatracker.ietf.org/doc/html/rfc2119-->
+
 These rules apply for all official in-person RoboRacer competitions.
 
-With every competition instance, these rules might be altered by specific / additional rules. In parts where both documents contradict, additional rules take preference.
+With every competition instance, these rules might be altered by specific / additional rules. In parts where both documents contradict, additional rules take preference. <!--who officially communicates rules and how are they communicated?-->
+_The rules used in a competition are posted on the competition website, including the version and commit hash. This document uses [semantic versioning 2](https://semver.org) for defining version._
+
+<!--Add versioning for rules and specify who defines which rules are used-->
 
 These rules are organized as follows:
 ...
 
+<!--Replace warning with a different word-->
 Violating the rules may result into a team warning. Upon receiving three warnings, the team may be disqualified from the competition. Multiple disqualification and repeated misbehaviour may result into a ban, i.e., unability to attend future competitions.
     - Note that warnings are induced on whole teams not individuals.
 
-_!! WE HAVE TO DIFFERENTIATE BETWEEN THIS WARNING AND THE WARNING FROM HEAD-TO-HEAD!!_
+!! WE HAVE TO DIFFERENTIATE BETWEEN THIS WARNING AND THE WARNING FROM HEAD-TO-HEAD!!_ <!--YES, we should have a section about possible penalties and the scope of those penalties. E.g.: do strikes remain after a race or are they reset?-->
 
 _I would call them strikes. But maaaaybe we don't need to differentiate between them._
 
@@ -122,7 +142,7 @@ Organizers reserve the right to change the rules applied in the competition.
 - Touching
 - Crashing
 - Track section: Centerline based...?
-- Whistle
+- Whistle<!--: LOUD!?-->
 - Overtakes?
 - Track section
 - Penalties:
@@ -131,16 +151,19 @@ Organizers reserve the right to change the rules applied in the competition.
 - Disqualification.
 - Flags: When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current round.
-    - Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track. After the crash is resolved by the stewards, the flag is dropped and the race resumes.
+    - Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track. ~~After the crash is resolved by the stewards, the flag is dropped and the race resumes.~~ <!--NAMING_CONSISTENCY: steward-->
     - Yellow flag: A flag is raised if the team is warned for a rule violation.
     - Black flag: A flag is raised if the team is disqualified. The flag is dropped after the disqualified team stops the car and leaves the track. The opponent is allowed to continue the race till completion of the set number of laps.
     - Green flag: Optional - raised to signal that the race is safe to continue. The flag is dropped after the race resumes.
-    - The steward holds the black flag in each hand, one for each team.
+    - Blue flag: Optional - used during open testing to indicate that a team needs to let another team pass.
+    - The steward holds the black flag in each hand, one for each team. <!--Point flags to the side of the team-->
+- Team
+- Team Member
 
 ## Vehicle specifications
 _Note: I omit classes as ICRA 2025 removed them. I think that it currently makes sense._
 
-Each vehicle will be inspected during the competition whether it meets the criteria. In case the criteria are not met, the vehicle is not allowed to be used in the competition.
+Each vehicle will be inspected during the competition whether it meets the<!-- qualification(?)--> criteria. In case the criteria are not met, the vehicle is not allowed to be used in the competition.
 
 Following rules mostly specify the upper bounds on the components; generally everything that is of a lower spec is allowed.
 
@@ -168,6 +191,7 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - ... TODO: Add that Velineon is the upper limit (?)
     - _Felix: If so, what is the limit? The non-existant torque parameters of the motor? The kV, can be, at best, interpreted as inverse proportional to the torque?; So: higher kV -> higher max RPM & lower torque; So limit: max. 4S with Velineon +/- 10% for torque (we should check what the hobbywing has for this)_
     - _J: You are completely right, but we should (kinda have to) address that. Sooner or later someone *wink wink* tries to drive with something more powerful._
+    - _Felix: https://things-in-motion.blogspot.com/2018/12/how-to-estimate-torque-of-bldc-pmsm.html describes the relationship between torque, KV and current (might also be interesting for the control team...). Should we, if this is correct, use this for the limits?_
     - Recommended: Velineon 3500
 5. Battery
     - Up to **4S** for powering the motor.
@@ -180,9 +204,9 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - No limits, but all computation during the race has to be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
 7. LiDAR
-    - Single plane only.
+    - ~~Single plane only.~~ _Note: Multi-plane lidar might add more features (outside of the track walls) for localization_
     - _Felix: Do we want to add this limit when we want to add bridges?_
-    - Detection range: ≤ 30m
+    - ~~Detection range: ≤ 30m~~
     - Scanning frequency: ≤ 40Hz
     - Angular resolution: ≥ 0.125°s
     - Recommended: Hokuyo UST-30LX
@@ -190,20 +214,21 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - No limits. Monocameras and stereocameras are allowed.
     - _Felix: Should we include/exclude optical flow sensors (for odometry?)_
     - _J: I would keep them allowed. But they should be listed in the HW list?_
+    - _Felix: Yes, I think they should be a requirement, if used._
 9. External localization
     - GPS and similar indoor solutions are not allowed.
     - Exception: Organizers.
 
-Other sensors are not restricted.
+Other sensors are not restricted.<!--but MUST be mentioned in the hardware list.-->
 
 ### Vehicle parameters
 
 - You can't hinder the opponents from detecting your car, e.g., using materials/colors to adjust the car reflectivity.
-- While on the track, the car must occupy a square-shaped space of size at least 12×12 cm at every horizontal plane between 10 to 30 cm above the ground. Usually, this is achieved by placing a 12x12x20cm box on top of the car at its back.
-    - The box should be made of LiDAR perceivable material (e.g., cardboard) and not be reflective.
+- While on the track, the car MUST occupy a square-shaped space of size at least 12×12 cm at every horizontal plane between 10 to 30 cm above the ground. Usually, this is achieved by placing a 12x12x20cm box on top of the car at its back.<!--Replace `While` with `At all times`-->
+    - The box should be made of LiDAR perceivable material (e.g., cardboard) and not be reflective.<!--it should be reflective, right?-->
     - As long as the object results in the desired LiDAR signature, the object can have any additional aeorodynamic shapes added like fins, wings, etc.
     - The box maybe of any color as long as it is easily perceivable by the LiDARs of the other cars.
-- There has to be a free USB-A connector on the car computer to be used during the competition.
+- There has to be a free USB-A connector on the car computer to be used during the competition. <!--for what? T2V is optional and teams must bring it. They can decide on their own, how they connect it-->
 
 
 ## Competition Area
@@ -255,6 +280,10 @@ _Note: Eventually, "racer stance" should be here as well._
 
 A list of possible track features follow. Competition rules will specify, which of them (might) apply.
 
+_Add:_
+- _Slow driving sections_
+- _Pit Lane_
+
 #### Dead-ends
 
 Track contains parts that do not lead to the finish line.
@@ -272,11 +301,15 @@ _Felix: Do we really want to include the outside walls? Then we would probably n
 
 _J: At least I think so. I think having inner walls with gaps is slightly better but it has its flaws._
 
+_Felix: Okay, then we need to plan for outer-outer walls in Vienna_
+
 - Inside the gaps the track border is delimited by a tape on the ground (or any other marking technique).
 
 _Felix: What about outside?_
 
 _J: Does it make sense to do it there?_
+
+_Felix: It would make the track longer, but allow for more interesting overtaking_
 
 - Driving inside the gaps is not allowed.
     - Crossing the track border is considered as a touch.
@@ -301,7 +334,7 @@ The track contains intersections, i.e., a track section where multiple driving d
 The track surface is deliberately altered in certain track sections.
 
 - This change can both reduce or increase surface friction.
-- When surface is changed, the track does not have to be entirely flat; a small height change may occur. This change is below a certain threshold to not pose a threat to the cars.
+- When surface is changed, the track does not have to be entirely flat; a small height change may occur. This change is below a certain threshold to not pose a threat to the cars. <!-- define threshold-->
 - Competition rules must specify how the surface is altered.
     - The surface cannot be altered by methods that could damage the cars, e.g., spilling water on the track.
 
@@ -321,6 +354,7 @@ The track contains a bridge.
 
 - In this section the track is generally not flat.
 
+<!-- Add all the limits we place on bridges, e.g. elevation, ...-->
 
 ## Competition organization
 
@@ -350,6 +384,8 @@ Any higher role can also perform the tasks of a subordinate rule.
 _
 
 _J: I think this is not something that has to be in rules... more like in the rules for organizers. But yes, it should be clear who is "the contact person"._
+
+_Felix: I would day that for transparency it should be included herer as well. Then teams know who to bother with what and who might have a conflict-of-interest._
 
 ## Registration
 
@@ -616,7 +652,7 @@ _Note: Add something about starting on time, regardless of the teams._
 
 ### Tournament types
 
-Below a list of possible tournament types follows. Competition rules specify, which are used.
+Below a list of possible tournament types follows. Competition rules specify, which are used. <!--add the who starts where and who wins here-->
 
 #### All-vs-all
 
@@ -679,7 +715,7 @@ If the racing track is changed for the Master Cup, the teams are given an extra 
 
 - Upon crashing the opponent (e.g., one of the cars significantly diverges from its expected trajectory), these steps are applied:
 
-    - Referees call the crash and pause the race. _and signal for it by raising the red flag._
+    - Referees call the crash and pause the race. _and signal for it by raising the red flag._ <!--NAME_CONSISTENCY: stewards?-->
         - Not adhering to the race pause may result into a warning.
     - Referees judge which car is at fault.
     - Both cars are placed at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
