@@ -136,6 +136,7 @@ Organizers reserve the right to change the rules applied in the competition.
 **ADD MORE CLEAR DEFINITIONS**
 
 - Car
+- Hardware list: List of components that the car is composed of. All parts of the Vehicle specification must be addressed along with additional sensors.
 - Track: Space where we drive, muhehe
 - Heat: Single instance of n-teams racing on the track. A race can be composed on multiple heats.
 - Session: Block of specific competition part.
@@ -163,7 +164,7 @@ Organizers reserve the right to change the rules applied in the competition.
 ## Vehicle specifications
 _Note: I omit classes as ICRA 2025 removed them. I think that it currently makes sense._
 
-Each vehicle will be inspected during the competition whether it meets the<!-- qualification(?)--> criteria. In case the criteria are not met, the vehicle is not allowed to be used in the competition.
+Each vehicle will be inspected during the competition whether it meets the specified criteria. In case the criteria are not met, the vehicle is not allowed to be used in the competition.
 
 Following rules mostly specify the upper bounds on the components; generally everything that is of a lower spec is allowed.
 
@@ -204,12 +205,12 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - No limits, but all computation during the race has to be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
 7. LiDAR
-    - ~~Single plane only.~~ _Note: Multi-plane lidar might add more features (outside of the track walls) for localization_
-    - _Felix: Do we want to add this limit when we want to add bridges?_
-    - ~~Detection range: ≤ 30m~~
+    - _Note: Multi-plane lidar might add more features (outside of the track walls) for localization_
+    - Number of planes: Not limited
+    - Detection range: Not limited
     - Scanning frequency: ≤ 40Hz
     - Angular resolution: ≥ 0.125°s
-    - Recommended: Hokuyo UST-30LX
+    - Recommended: Hokuyo UST-30LX, Hokuyo UST-10LX, etc.
 8. Camera
     - No limits. Monocameras and stereocameras are allowed.
     - _Felix: Should we include/exclude optical flow sensors (for odometry?)_
@@ -225,10 +226,9 @@ Other sensors are not restricted.<!--but MUST be mentioned in the hardware list.
 
 - You can't hinder the opponents from detecting your car, e.g., using materials/colors to adjust the car reflectivity.
 - While on the track, the car MUST occupy a square-shaped space of size at least 12×12 cm at every horizontal plane between 10 to 30 cm above the ground. Usually, this is achieved by placing a 12x12x20cm box on top of the car at its back.<!--Replace `While` with `At all times`-->
-    - The box should be made of LiDAR perceivable material (e.g., cardboard) and not be reflective.<!--it should be reflective, right?-->
+    - The box should be made of LiDAR perceivable material (e.g., cardboard).
     - As long as the object results in the desired LiDAR signature, the object can have any additional aeorodynamic shapes added like fins, wings, etc.
     - The box maybe of any color as long as it is easily perceivable by the LiDARs of the other cars.
-- There has to be a free USB-A connector on the car computer to be used during the competition. <!--for what? T2V is optional and teams must bring it. They can decide on their own, how they connect it-->
 
 
 ## Competition Area
@@ -259,7 +259,7 @@ The competition rules must specify:
 - When the track is delimited by a set of pipes (on top of each other) there might be gaps between them.
 - Due to the car tilting, the sensors might see over the track borders.
 - When multiple tracks are present, their parameters, features and overall nature may differ.
-
+    - Current session may differ as well. In that case the organizers must clearly state the current session on each track.
 
 ### Track behaviour
 
@@ -280,9 +280,6 @@ _Note: Eventually, "racer stance" should be here as well._
 
 A list of possible track features follow. Competition rules will specify, which of them (might) apply.
 
-_Add:_
-- _Slow driving sections_
-- _Pit Lane_
 
 #### Dead-ends
 
@@ -291,25 +288,31 @@ Track contains parts that do not lead to the finish line.
 - Driving into these track sections is not penalized.
 
 
+#### Speed-restricted sections
+
+Track contains sections with defined speed limits.
+
+- Driving with forbidden speed is considered as a ...
+- The speed limit is defined as ... _e.g., traffic signs? lights?_
+
+
+#### Pit lane
+
+Track contains sections that are marked as a pit lane.
+
+- When this track feature is used, stopping outside the pit lane is not allowed.
+    - Stopping outside of pit lane is considered as a...
+- Teams are allowed to add cars to the track only at a pit lane area.
+    - Teams are highly encouraged to do the car removal here as well, unless required by the current situation.
+
+
 #### Open walls
 
 Track borders are not closed, i.e., there are horizontal gaps in them.
 
 - Gaps might be in the inner walls as well as in the outside walls.
 
-_Felix: Do we really want to include the outside walls? Then we would probably need to add another layer of walls_
-
-_J: At least I think so. I think having inner walls with gaps is slightly better but it has its flaws._
-
-_Felix: Okay, then we need to plan for outer-outer walls in Vienna_
-
 - Inside the gaps the track border is delimited by a tape on the ground (or any other marking technique).
-
-_Felix: What about outside?_
-
-_J: Does it make sense to do it there?_
-
-_Felix: It would make the track longer, but allow for more interesting overtaking_
 
 - Driving inside the gaps is not allowed.
     - Crossing the track border is considered as a touch.
@@ -334,9 +337,12 @@ The track contains intersections, i.e., a track section where multiple driving d
 The track surface is deliberately altered in certain track sections.
 
 - This change can both reduce or increase surface friction.
-- When surface is changed, the track does not have to be entirely flat; a small height change may occur. This change is below a certain threshold to not pose a threat to the cars. <!-- define threshold-->
-- Competition rules must specify how the surface is altered.
-    - The surface cannot be altered by methods that could damage the cars, e.g., spilling water on the track.
+- When surface is changed, the track does not have to be entirely flat; a small height change may occur.
+    - This change is below a certain threshold to not pose a threat to the cars.
+- Competition rules must specify:
+    - How the surface is altered.
+        - The surface cannot be altered by methods that could damage the cars, e.g., spilling water on the track.
+    - Maximum height change between two surfaces (mm).
 
 
 #### Track splits
@@ -344,17 +350,20 @@ The track surface is deliberately altered in certain track sections.
 The track contains track splits, i.e., the track section is split into multiple paths.
 
 - Driving through the track may be performed by any of the paths. They are considered equal.
-    - However, they might not be equal performance-wise, e.g., taking one of the paths might be more benefitial than the other.
+    - However, they might not be equal performance-wise, e.g., taking one of the paths might be more beneficial than the other.
 - Driving though only one of the paths is required for lap completion.
 
 
-#### Bridge
+#### Bridge (Elevation/Slopes?)
 
 The track contains a bridge.
 
 - In this section the track is generally not flat.
+- Competition rules must specify:
+    - Maximum elevation (%).
 
-<!-- Add all the limits we place on bridges, e.g. elevation, ...-->
+_Note: When using this track feature it can't prevent teams using single plane lidar from completing a lap._
+
 
 ## Competition organization
 
@@ -387,6 +396,7 @@ _J: I think this is not something that has to be in rules... more like in the ru
 
 _Felix: I would day that for transparency it should be included herer as well. Then teams know who to bother with what and who might have a conflict-of-interest._
 
+
 ## Registration
 
 _Note: Competition rules should specify: registration method, requirements, deadlines._
@@ -397,9 +407,6 @@ _Note: Competition rules should specify: registration method, requirements, dead
     - Filling up the registration form.
     - Submitting a video of the car autonomously driving.
     - Submitting a hardware list.
-    - Paying the registration fee.
-    - _Felix: if applicable, if it is handled by the conference, we are concerned with this. Teams that don't pay or not allowed to enter the venue_
-    - _J: Yeah, right. It should be definitely inside the section below._
 - Not submitting in time may void the registration.
 - Registration not confirmed by the organizers is not ...
 
@@ -470,9 +477,6 @@ _Note: I will do variants in this way. They might show differently based on your
 
 A list of possible practice variants follows. Competition rules specify which of them apply.
 
-_Note: Maybe add mapping practice as another variant; slightly different rules should apply there, e.g., speed limit._
-
-_Felix: If more than one track is present, different practice types might be applied to different tracks. In this case Organizers MUST clearly mark which type of practive is in use on which track_
 
 #### Shared Practice (Group)
 
@@ -489,6 +493,14 @@ Practice session where the track is opened for all teams.
 Practice session where the track is reserved for one team only.
 
 
+#### Mapping Practice
+
+Practice session used for mapping the track.
+
+- Teams are not allowed to test their racing algorithms during this practice.
+- A speed limit may be employed for this practice, especially when it is Shared.
+
+
 ### Violations
 
 - Teams are not allowed to obstructing other teams by any means (e.g., leaving a stationary car on the track outside of the designated area).
@@ -501,20 +513,13 @@ _Note: Penalties are not the same as violations._
 
 ## Inspection
 
-_Note: In our case the inspection is to check whether it matches the submitted (and approved) hardware list._
-
-_Felix: Yes, and if it structurally safe and has the parachute_
-
-_What to do when it is different?_
-
-_Felix: I would say that if we can determine if the car would be approved, it would be fine? E.g. a team specified they will use a Jetson, but it breaks and they use a NUC instead, which is also allowed, then it should be fine._
-
 The purpose of the Inspection is to check that the hardware of the autonomous cars meets the competition requirements and the cars are not dangerous for the environment, opponents, and people.
 
 - The inspection of the vehicles is done in a dedicated time-frame.
 - The inspection is done by the race referees.
 - The inspection has to be completed before the Qualification and after any significant changes to the cars hardware or algorithms during any of the days of the event.
 - When a hardware list is submitted as a part of the registration, the car is checked to match these parameters.
+    - Organizers may also approve using cars that do not match their parameters.
 - Car that is not inspected and approved is not allowed to be used in the competition.
 
 
@@ -526,24 +531,25 @@ _Felix: Is crash defined somewhere? Touching would be okay, right? Or is all kin
 
 _J: Food for thoughts._
 
-- Complete a single lap without crashing into anything. Anything can be:
+- Complete a single lap without touching and crashing anything. Anything can be:
 
     - Track borders
     - Obstacles
     - Other cars
 
 - Qualification is done with a single racing car on the track.
-- Only inspected and approved car can be in a qualification.
-- _Felix: Do teams need to perform qualification with all cars they intend to use? In case they use different algorithms or the cars are not equally well calibrated/tuned?_
-- _J: Yes._
+- Only inspected and approved car can be used in the Qualification.
+    - In case the team intends to use multiple cars during the competition, they have to qualify with all of them.
+
 - The Qualification may be merged with Time Trial.
     - In this case the obstacle avoidance capability has to be checked separately during a dedicated session. _Felix: or during open training?_
 
-Teams register for the Qualification slot in a FCFS way.
+- Teams register for the Qualification slot in a FCFS way.
 
-There are no penalties. Crashing results into another try. (Up to the time limit.)
+- There are no penalties. Touching and/or crashing results into another try. (Up to the time limit.)
+    - Teams may manually place the car to the starting line.
 
-Organizers might add more slots based on the success rate of the teams.
+- Organizers might add more slots based on the success rate of the teams.
 
 
 ## Race ...
@@ -563,8 +569,6 @@ _Note: Competition rules should specify: #heats, time per heat; e.g. 2x5 minutes
 
 Time Trial is a race with a goal to drive through the designated track as fast as possible and as consistently as possible. The idea is to push the algorithms to their limits.
 
-_Felix: should we add that there will be algorithms?_
-
 - Each team must pass the Qualification to be able to participate in the Time Trial.
 
 - Time Trial is used as a seeding technique for the Head-to-Head Race.
@@ -573,9 +577,7 @@ _Felix: should we add that there will be algorithms?_
 
 - Teams have to book (FCFS) a time slot in each heat. The heat timer is fixed to the time slot and no extensions are given. Missing out a time slot does not give the team an additional slot.
 
-    - Upon their mutual agreement, the teams are allowed to exchange the slots.
-    - This change is irrevertible after announcing it to the organizers.
-    - _Felix: i would say they can change upto a time determined first by the organizers_
+    - Upon their mutual agreement, the teams are allowed to exchange the slots by informing the responsible organizers.
 
 - The teams are allowed to change the configuration of their algorithms in between the heats, and even during the heat. When the configuration is changed during the heat, the car must stand still. In other words, the teams cannot update the configuration on-line while the car moves.
 
@@ -619,7 +621,7 @@ _Felix: Yes, maybe move them to a separate section and clearly specify what the 
 
 ## Head-to-Head Race
 
-_Note: This is still really under heavy development._
+_Competition rules have to specify: Timeslot, competition type, ..._
 
 _Outline: What?, General overview, starting position, race start, race rules, penalities, etc._
 
