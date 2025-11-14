@@ -67,7 +67,7 @@ h2, h3, h4, h5, h6 {
 -->
 
 ## Outline
-The main concept is to go though v2 rules, and filter out those that are not required anymore. In general, v3 should be ready for **all** competitions, introducing harmony a<!--and?--> transparency to the overall competition environment.
+The main concept is to go though v2 rules, and filter out those that are not required anymore. In general, v3 should be ready for **all** competitions, introducing harmony and transparency to the overall competition environment.
 
 Current idea is to provide a set of rules (also, general rules) and then, optionally, competition modifications (also, additional rules).
 
@@ -103,9 +103,8 @@ On the other hand I want to avoid:
 
 These rules apply for all official in-person RoboRacer competitions.
 
-With every competition instance, these rules might be altered by specific / additional rules. In parts where both documents contradict, additional rules take preference. <!--who officially communicates rules and how are they communicated?-->
-
-The rules used in a competition are posted on the competition website with a link to the specific version in the rules repository.
+The rules used in a competition are posted on the competition website along with a link to the specific version in the rules repository.
+    - Note that competition rules may be versioned differently, e.g., by having a changelog.
     - _General rules should not change after announcing them. Competition rules may change even later._
     - _Note: It is better to remove / relax something. It should not ADD more constraints._
 
@@ -125,19 +124,24 @@ _I would call them strikes. But maaaaybe we don't need to differentiate between 
 
 ## Competition rules
 
-- Specify timeline
-- Place
-- Track/area parameters
-- Which parts are applied
-- Contact on organizers
-- Prizes
+With every competition instance, general rules are accompanied by competition rules.
 
-Organizers reserve the right to change the rules applied in the competition.
+- Competition rules may alter general rules or introduce additional rules.
+- In parts where both documents contradict, competition rules take preference.
+
+- Competition rules must contain at least:
+    - Specify timeline
+    - Place
+    - Track/area parameters
+    - Which parts of general rules are applied (if multiple options are available)
+    - Contact on organizers
+    - Prizes
+
+- Organizers reserve the right to change the rules applied in the competition.
+    - Subsequent changes have to be announced to the teams that send expressed interest in the competition in an official way, e.g., sending a registration form.
 
 
 ## Definitions
-
-**ADD MORE CLEAR DEFINITIONS**
 
 - Team: A unit of people attending the competition.
 - Team Member: A member of the team. Each person can belong to only one team during the competition.
@@ -158,7 +162,7 @@ Organizers reserve the right to change the rules applied in the competition.
 - Whistle: Sound signal to raise teams' attention. Used during the race to highlight important event. May be accompanied with flags.
 - Flags: Visual signal to the teams. May be accompanied with whistles. When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current round.
-    - Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track. ~~After the crash is resolved by the stewards, the flag is dropped and the race resumes.~~ <!--NAMING_CONSISTENCY: steward-->
+    - Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track.
     - Yellow flag: A flag is raised if the team is warned for a rule violation. _This should be, e.g., slow speed section._
     - Black flag: A flag is raised if the team is disqualified. The flag is dropped after the disqualified team stops the car and leaves the track. The opponent is allowed to continue the race.
     - Green flag: A flag is raised to signal that the race is safe to continue. The flag is dropped after the race resumes.
@@ -197,6 +201,7 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - _Felix: If so, what is the limit? The non-existant torque parameters of the motor? The kV, can be, at best, interpreted as inverse proportional to the torque?; So: higher kV -> higher max RPM & lower torque; So limit: max. 4S with Velineon +/- 10% for torque (we should check what the hobbywing has for this)_
     - _J: You are completely right, but we should (kinda have to) address that. Sooner or later someone *wink wink* tries to drive with something more powerful._
     - _Felix: https://things-in-motion.blogspot.com/2018/12/how-to-estimate-torque-of-bldc-pmsm.html describes the relationship between torque, KV and current (might also be interesting for the control team...). Should we, if this is correct, use this for the limits?_
+    - TODO: Add torque limits, Amp limits of motors.
     - Recommended: Velineon 3500
 5. Battery
     - Up to **4S** for powering the motor.
@@ -206,12 +211,11 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - Recommended: VESC
 5. Remote controller
     - No limits.
-    - It must be possible to have a kill-switch ability, to stop the car immediately.
+    - It must have a kill-switch ability to stop the car immediately.
 6. CPU
     - No limits, but all computation during the race has to be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
 7. LiDAR
-    - _Note: Multi-plane lidar might add more features (outside of the track walls) for localization_
     - Number of planes: Not limited
     - Detection range: Not limited
     - Scanning frequency: ≤ 40Hz
@@ -223,7 +227,8 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - GPS and similar indoor solutions are not allowed.
     - Exception: Organizers.
 
-Other sensors are not restricted.<!--but MUST be mentioned in the hardware list.-->
+Other sensors are not restricted, however they MUST be mentioned in the hardware list.
+
 
 ### Vehicle parameters
 
@@ -233,6 +238,7 @@ Other sensors are not restricted.<!--but MUST be mentioned in the hardware list.
     - As long as the object results in the desired LiDAR signature, the object can have any additional aeorodynamic shapes added like fins, wings, etc.
     - The box maybe of any color as long as it is easily perceivable by the LiDARs of the other cars.
 - Tire chemicals (additives) that may influence the track surface are not allowed.
+    - Cleaning liquids are allowed. _TODO: Need to specify._
 
 
 ## Competition Area
@@ -257,6 +263,7 @@ The competition rules must specify:
 - Maximum size (e.g., area) of the track.
 - List of used track features.
 
+
 ### General track notes
 
 - The surface friction may naturally slightly differ across the track.
@@ -265,6 +272,7 @@ The competition rules must specify:
 - Due to the car tilting, the sensors might see over the track borders.
 - When multiple tracks are present, their parameters, features and overall nature may differ.
     - Current session may differ as well. In that case the organizers must clearly state the current session on each track.
+
 
 ### Track behaviour
 
@@ -378,6 +386,15 @@ The track contains a sloped section, e.g., bridge.
 _Note: When using this track feature it can't prevent teams using single plane lidar from completing a lap._
 
 
+#### Banks
+
+The track contains banks, i.e., the track is elevated in the outer parts of turns.
+
+- In this section the track is not flat.
+- Competition rules must specify:
+    - _Bank?_
+
+
 ## Competition organization
 
 The competition is composed of:
@@ -478,6 +495,7 @@ _Note: Racing violations are not applied here._
 
 _Note: Penalties are not the same as violations._
 
+
 ### Practice variants
 
 _Note: I will do variants in this way. They might show differently based on your CSS, but they should be quite minimal; "list-like"._
@@ -534,8 +552,10 @@ Qualification is a session testing the autonomous capabilities of the racing car
 - Only inspected and approved car can be used in the Qualification.
     - In case the team intends to use multiple cars during the competition, they have to qualify with all of them.
 
+- The car can qualify during a practice session.
+
 - The Qualification may be merged with Time Trial.
-    - In this case the obstacle avoidance capability has to be checked separately during a dedicated session. _Felix: or during open training?_
+    - In this case the obstacle avoidance capability has to be checked separately during a dedicated session, e.g., during Practice.
 
 - Teams register for a Qualification slot in a FCFS way.
 
