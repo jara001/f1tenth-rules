@@ -127,7 +127,7 @@ _I would call them strikes. But maaaaybe we don't need to differentiate between 
 With every competition instance, general rules are accompanied by competition rules.
 
 - Competition rules may alter general rules or introduce additional rules.
-- In parts where both documents contradict, competition rules take preference.
+    - In parts where both documents contradict, competition rules take preference.
 
 - Competition rules must contain at least:
     - Specify timeline
@@ -138,7 +138,7 @@ With every competition instance, general rules are accompanied by competition ru
     - Prizes
 
 - Organizers reserve the right to change the rules applied in the competition.
-    - Subsequent changes have to be announced to the registered teams.
+    - Subsequent changes have to be announced to all registered teams.
 
 
 ## Definitions
@@ -150,15 +150,16 @@ With every competition instance, general rules are accompanied by competition ru
     - Inspected team: Participating team that have at least one inspected car.
     - Qualified team: Inspected team that successfully finished the Qualification.
 - Team Member: A member of the team. Each person can belong to only one team during the competition.
+    - Driver: A team member that is holding the remote controller in order to hit the kill-switch when necessary.
 - Car: Vehicle used in the competition, assembled according to the Vehicle specification. Each team must have their own car.
     - Inspected car: Car that successfully passed through the Inspection.
-- Kill-switch: A method to remotely and immediately stop the car.
-- Hardware list: List of components that the car is composed of along with their costs. All parts of the Vehicle specification must be addressed along with additional sensors.
+    - Hardware list: List of components that the car is composed of along with their costs. All parts of the Vehicle specification must be addressed along with additional sensors.
+    - Kill-switch: A method to remotely and immediately stop the car.
 - Track: Delimited area used for racing.
-- Track section: Part of the track along its centerline spanning across the whole width.
+    - Track section: Part of the track along its centerline spanning across the whole width.
 - Session: Block of specific competition part.
-- Slot: Time block reserved for a subset of teams. Single session usually contains multiple slots.
-- Heat: Single instance of n-teams racing on the track. A race can be composed on multiple heats.
+    - Slot: Time block reserved for a subset of teams. Single session usually contains multiple slots.
+    - Heat: Single instance of n-teams racing on the track. A race can be composed on multiple heats.
 - Touching: Moving an object by less than 5 cm.
 - Crashing: Moving an object by 5 cm or more. When interacting with another car, crashing means significantly changing its expected trajectory.
 - Overtake: Act of bypassing opponent car by at least half of its length.
@@ -185,8 +186,8 @@ Following rules mostly specify the upper bounds on the components; generally eve
 1. Size
     - Width: 296mm ± 10%
     - Length: 568mm ± 10%
-    - Height: TODO
-    - The size limit is induced on the fully equipped car.
+    - Height: ≤ 400mm
+    - The size limit is induced on the fully equipped car, i.e., as used during the race.
 2. Weight
     - No limits.
     - _Felix: Should we add a maximum weight limit? Maybe 5kg? That should be enough for a car (even though it could be tight with BE)_
@@ -218,7 +219,7 @@ Following rules mostly specify the upper bounds on the components; generally eve
     - Recommended: VESC
 5. Remote controller
     - No limits.
-    - It must have a kill-switch ability to stop the car immediately.
+    - It must have a kill-switch ability so the driver is able to stop the car immediately and remotely.
 6. CPU
     - No limits, but all computation during the race has to be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
@@ -236,7 +237,7 @@ Following rules mostly specify the upper bounds on the components; generally eve
 10. Production cost
     - No limits.
     - **Starting from 2027 it will be limited to ~ 5000$.** (Current estimate.)
-    - Contains all components + price estimation of custom parts.
+    - Contains the price of all components + price estimation of custom parts.
         - The retail price must be free of any discounts.
         - Custom parts: The price estimate for a company to manufacture your source file.
 
@@ -250,8 +251,8 @@ Other sensors are not restricted, however they MUST be mentioned in the hardware
     - The box should be made of LiDAR perceivable material (e.g., cardboard).
     - As long as the object results in the desired LiDAR signature, the object can have any additional aeorodynamic shapes added like fins, wings, etc.
     - The box maybe of any color as long as it is easily perceivable by the LiDARs of the other cars.
-- Tire chemicals (additives) that may influence the track surface are not allowed.
-    - Cleaning liquids are allowed. _TODO: Need to specify._
+- Tire chemicals (additives) that may leave residuals on the track surface are not allowed.
+    - Cleaning liquids are allowed. _TODO: Need to clarify._
 
 
 ## Competition Area
@@ -282,27 +283,22 @@ The competition rules must specify:
 - The surface friction may naturally slightly differ across the track.
 - When the room is surrounded by windows or semi-transparent surfaces, it might result into incorrect sensor measurements.
 - When the track is delimited by a set of pipes (on top of each other) there might be gaps between them.
-- Due to the car tilting, the sensors might see over the track borders.
+- Due to the car tilting, the sensors might see over the track borders or see the floor.
 - When multiple tracks are present, their parameters, features and overall nature may differ.
     - Current session may differ as well. In that case the organizers must clearly state the current session on each track.
 
 
 ### Track behaviour
 
-_Note: I want to make it as a collection of rules "how to behave on the track"._
-
 - The teams are obliged to be respectful with other users of the track.
+    - Teams are encouraged to pay attention when moving around the track, especially when, e.g., running or jumping.
     - Teams are not allowed to obstructing other teams by any means (e.g., if specified, leaving a stationary car on the track outside of the designated area).
     - Teams are not allowed to endanger other teams and cars by an inappropriate behaviour.
 - While testing the car, the team should limit the amount of damage to the track to an absolute minimum.
 - Whenever using the track, there has to be at least one team member that keeps an eye on the car and is prepared to activate the kill-switch.
-    - During the race, this responsible person has to hold the remote in a risen hand to be clear that the car is not manually controlled.
-
+- Teams that are not taking part in the session should avoid the track at all times.
 - Driving outside of the track is generally not allowed.
     - Exception is testing the car in very slow speeds.
-
-(Violation?)
-- Teams that are not taking part in the session should avoid the track at all times.
 
 
 ### Track Features
@@ -349,7 +345,7 @@ Track borders are not closed, i.e., there are horizontal gaps in them.
 
 - Driving inside the gaps is not allowed.
     - Crossing the track border is considered as a touch.
-    - Crossing the track border by at least 3 wheels is considered as a crash.
+    - Crossing the track border by parts of at least 3 wheels is considered as a crash.
 
 
 #### Intersections
@@ -393,7 +389,7 @@ The track contains track splits, i.e., the track section is split into multiple 
 
 #### Slopes
 
-The track contains a sloped section, e.g., bridge.
+The track contains a sloped section, e.g., a bridge.
 
 - In this section the track is generally not flat.
 - Competition rules must specify:
@@ -465,7 +461,7 @@ _Note: I wanted to add something in between -- you are registered, but can you a
 The team is eligible to attend the competition as long as:
 
 - Registration fee is paid.
-- Registration is confirmed by the organizers.
+- Registration is confirmed by the organizers, i.e., the team is approved.
 - All required forms and materials are sent to the organizers by the given deadline.
     - If applicable, the car does not differ from the submitted hardware list.
 - _Felix: This is part of the on-site registration/inspection, I'm not sure if we actually need this section... We could add it as a "Checklist" in general_
@@ -473,7 +469,7 @@ The team is eligible to attend the competition as long as:
 
 ## On-site registration
 
-Upon their arrival to the competition site, the teams must promply register on-site in order to race.
+Upon their arrival to the competition site, the teams must promptly register on-site in order to race.
 
 - The teams have to register on-site in the given time frame.
     - Exceptions are allowed as long as they are discussed with the organization team.
@@ -489,7 +485,7 @@ Upon their arrival to the competition site, the teams must promply register on-s
 
     - Attend the competition.
     - Make use of the team designated area.
-    - Sign in to the practice sessions.
+    - Sign in to the sessions.
 
 - Not completing the on-site registration in time may result into a team disqualification from the competition.
 
@@ -501,14 +497,8 @@ Practice is a session for the teams to train and test their car directly on the 
 - Practice track should contain all track features used during the competition, but its layout may differ.
     - When the layout differs, there must be another practice session before the actual race to allow the teams to map the track.
 
-_Note: Racing violations are not applied here._
-
-_Note: Penalties are not the same as violations._
-
 
 ### Practice variants
-
-_Note: I will do variants in this way. They might show differently based on your CSS, but they should be quite minimal; "list-like"._
 
 A list of possible practice variants follows. Competition rules specify which of them apply.
 
@@ -542,7 +532,9 @@ The purpose of the Inspection is to check that the hardware of the autonomous ca
 
 - The inspection of the vehicles is done in a dedicated time-frame.
 - The inspection is done by the race referees.
-- The inspection has to be completed before the Qualification and after any significant changes to the cars hardware or algorithms during any of the days of the event.
+- The inspection has to be completed before the Qualification.
+    - Any significant changes to the cars hardware may void the inspection.
+    - Teams are advised to inform the organizers prior to these changes.
 - When a hardware list is submitted as a part of the registration, the car is checked to match these parameters.
     - Organizers may also approve using cars that do not match their parameters.
 - Car that is not inspected is not allowed to be used in the competition.
@@ -550,9 +542,7 @@ The purpose of the Inspection is to check that the hardware of the autonomous ca
 
 ## Qualification
 
-Qualification is a session testing the autonomous capabilities of the racing car.
-
-- Complete a single lap without touching and crashing anything. Anything can be:
+Qualification is a session testing the autonomous capabilities of the racing car. The goal is to complete a single lap without touching and crashing anything. Anything can be:
 
     - Track borders
     - Obstacles
@@ -592,7 +582,7 @@ _Note: Just a placeholder to put stuff here in case I can actually make a genera
         - Qualification
         - Time Trial
 
-- Teams that are not taking part in the session should avoid the track at all times.
+- During the race, the driver has to hold the remote in a raised hand to be clear that the car is not manually controlled.
 
 ### Race sessions
 
@@ -611,8 +601,6 @@ _Note: Just a placeholder to put stuff here in case I can actually make a genera
 - What if they do not stop?
 - What if they start too early?
 
-_Note: Eventually, "racer stance" should be here as well._
-
 
 ### Race penalties
 
@@ -621,16 +609,17 @@ _Note: Just an attempt._
 - Touching is not penalized.
     - Excessive/repeated touching may be considered as a crash.
 
-- Upon crashing into an obstacle/track border, the team has to stop the car and:
-    1. Move the car (by hand or using the remove control) to the side of the track next to the latest position before crash.
-    2. Repair the track / place the obstacles to their appropriate positions.
-    3. Wait for the clearance from the organizers.
-    4. Start the car.
+- Upon crashing into an obstacle/track border, the team has to:
+    1. Stop its car.
+    2. Move the car (by hand or using the remove control) to the side of the track next to the latest position before crash.
+    3. Repair the track and/or place the obstacles to their appropriate positions.
+    4. Wait for the clearance from the organizers.
+    5. Start the car and continue the race.
 
 - During all of this, the opponent’s car must not be restricted by the team’s actions and the opponent is allowed to further race without stopping its car.
 
 - Upon crashing into the opponent (e.g., one of the cars significantly diverges from its expected trajectory):
-    1. Referees call the crash and pause the race.
+    1. Referees call the crash and pause the race, teams have to stop their cars.
     2. Referees judge which car is at fault.
     3. Both cars are placed at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
         - If the team that was crashed into is able to autonomously detect and recover from the crash by stopping on the side of the track, that team is granted an extra head-start of 1 meter before resuming the race (i.e., the at-fault car is placed 3 meters behind the other car).
@@ -639,8 +628,7 @@ _Note: Just an attempt._
 
 ### Major infringements
 
-
-Following rules describe race violations that may result into warnings. Severe offenses may even lead to disqualification from the competition.
+Following rules describe rule violations that may result into warnings. Severe offenses may even lead to disqualification from the competition.
 
 - A crash is not considered a warning unless judged by the referees.
     - Crashes that result in a warning include but are not limited to "malicious" crashes where the autonomous car did not attempt to slow down or steer away from the opponent.
@@ -649,8 +637,6 @@ Following rules describe race violations that may result into warnings. Severe o
 
 - The algorithms must not intentionally hinder the opponent or perform any damage to it. Specifically, maneuvers such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction are strictly prohibited.
     - Violating this rule may lead to disqualification regardless the amount of warnings issued.
-
-- Teams that are not taking part in the session should avoid the track at all times.
 
 - Upon receiving 3 warnings, the team is disqualified from the competition.
     - During a race this automatically means the opponent wins.
@@ -672,13 +658,6 @@ Time Trial is a race with a goal to drive through the designated track as fast a
 - The teams are allowed to change the configuration of their algorithms in between the heats, and even during the heat. When the configuration is changed during the heat, the car must stand still. In other words, the teams cannot update the configuration on-line while the car moves.
 
 - The map (track layout) is known a priori (from a practice before) and the track layout does not change during the race. Keep in mind that cars crash into the walls and the layout of the track might slightly shift a little bit. Please consider this in your algorithms.
-
-
-### Penalties
-
-- Touching the border of the track and obstacles is not penalized. Excessive, repeated touching (up to the organizers) is considered a crash.
-
-- Upon crashing the track border / obstacle, the team has to stop the car and move it (by hand or using the remote control) on the side of the track next to the latest position before crash. After repairing the track, the car may continue. The time spent on moving the car and repairing the track is considered the penalty.
 
 
 ### Evaluation
@@ -786,25 +765,6 @@ Admission to Master Cup (with respect to the seeding) is done as follows:
 If the racing track is changed for the Master Cup, the teams are given an extra practice session to test their car and algorithms on the new track.
 
 
-### Penalties
-
-- Touching the border of the track or a static obstacle is not penalized. Excessive, repeated touching (up to the organizers) is considered a crash.
-
-- Upon crashing the track border, the team has to stop the car and move it (by hand or using the remote control) on the side of the track next to the latest position before crash. After repairing the track, the car may continue. The time spent on moving the car and repairing the track is considered the penalty.
-    - During all of this, the opponent’s car must not be restricted by the team’s actions and the opponent is allowed to further race without stopping its car.
-
-- Touching the opponent (e.g., light side-bumps and slow-speed nudges) is not penalized.
-
-- Upon crashing the opponent (e.g., one of the cars significantly diverges from its expected trajectory), these steps are applied:
-
-    - Referees call the crash and pause the race.
-        - Not adhering to the race pause may result into a warning.
-    - Referees judge which car is at fault.
-    - Both cars are placed at the location of the crash, with the at-fault car placed behind the other car by 2 meters.
-        - If the team that was crashed into is able to autonomously detect and recover from the crash by stopping on the side of the track, that team is granted an extra head-start of 1 meter before resuming the race (i.e., the at-fault car is placed 3 meters behind the other car).
-    - The referees resumes the race.
-
-
 ### Evaluation
 
 - The first car that completes given amount of laps wins.
@@ -816,6 +776,9 @@ There will be at least three referees.
 One referee will be assigned to each car and is solely responsible to call flag raises and rule violations per-team. The third referee is tasked with enforcing penalties, crash resolution, and time-keeping.
 
 
+## Awards ceremony
+
+The competition concludes with the Awards ceremony.
 
 ---
 
