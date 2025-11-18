@@ -490,79 +490,6 @@ Upon their arrival to the competition site, the teams must promptly register on-
 - Not completing the on-site registration in time may result into a team disqualification from the competition.
 
 
-## Practice
-
-Practice is a session for the teams to train and test their car directly on the track.
-
-- Practice track should contain all track features used during the competition, but its layout may differ.
-    - When the layout differs, there must be another practice session before the actual race to allow the teams to map the track.
-
-
-### Practice variants
-
-A list of possible practice variants follows. Competition rules specify which of them apply.
-
-
-#### Shared Practice (Group)
-
-Practice session where the track is opened for a subset of teams specified by the organizers.
-
-
-#### Open Practice
-
-Practice session where the track is opened for all teams.
-
-
-#### Closed Practice (Single)
-
-Practice session where the track is reserved for one team only.
-
-
-#### Mapping Practice
-
-Practice session used for mapping the track.
-
-- Teams are not allowed to test their racing algorithms during this practice.
-- A speed limit may be employed for this practice, especially when it is Shared.
-
-
-## Inspection
-
-The purpose of the Inspection is to check that the hardware of the autonomous cars meets the competition requirements and the cars are not dangerous for the environment, opponents, and people.
-
-- The inspection of the vehicles is done in a dedicated time-frame.
-- The inspection is done by the race referees.
-- The inspection has to be completed before the Qualification.
-    - Any significant changes to the cars hardware may void the inspection.
-    - Teams are advised to inform the organizers prior to these changes.
-- When a hardware list is submitted as a part of the registration, the car is checked to match these parameters.
-    - Organizers may also approve using cars that do not match their parameters.
-- Car that is not inspected is not allowed to be used in the competition.
-
-
-## Qualification
-
-Qualification is a session testing the autonomous capabilities of the racing car. The goal is to complete a single lap without touching and crashing anything. Anything can be:
-
-    - Track borders
-    - Obstacles
-    - Other cars
-
-- Qualification is done with a single racing car on the track.
-- Only inspected car can be used in the Qualification.
-    - In case the team intends to use multiple cars during the competition, they have to qualify with all of them.
-
-- The car can qualify during a practice session.
-
-- The Qualification may be merged with Time Trial.
-    - In this case the obstacle avoidance capability has to be checked separately during a dedicated session, e.g., during Practice.
-
-- There are no penalties. Touching and/or crashing results into another try. (Up to the time limit.)
-    - Teams may manually place the car to the starting line.
-
-- Organizers might add more slots based on the success rate of the teams.
-
-
 ## Race ...
 
 _Note: Just a placeholder to put stuff here in case I can actually make a general race section._
@@ -640,6 +567,79 @@ Following rules describe rule violations that may result into warnings. Severe o
 
 - Upon receiving 3 warnings, the team is disqualified from the competition.
     - During a race this automatically means the opponent wins.
+
+
+## Practice
+
+Practice is a session for the teams to train and test their car directly on the track.
+
+- Practice track should contain all track features used during the competition, but its layout may differ.
+    - When the layout differs, there must be another practice session before the actual race to allow the teams to map the track.
+
+
+### Practice variants
+
+A list of possible practice variants follows. Competition rules specify which of them apply.
+
+
+#### Shared Practice (Group)
+
+Practice session where the track is opened for a subset of teams specified by the organizers.
+
+
+#### Open Practice
+
+Practice session where the track is opened for all teams.
+
+
+#### Closed Practice (Single)
+
+Practice session where the track is reserved for one team only.
+
+
+#### Mapping Practice
+
+Practice session used for mapping the track.
+
+- Teams are not allowed to test their racing algorithms during this practice.
+- A speed limit may be employed for this practice, especially when it is Shared.
+
+
+## Inspection
+
+The purpose of the Inspection is to check that the hardware of the autonomous cars meets the competition requirements and the cars are not dangerous for the environment, opponents, and people.
+
+- The inspection of the vehicles is done in a dedicated time-frame.
+- The inspection is done by the race referees.
+- The inspection has to be completed before the Qualification.
+    - Any significant changes to the cars hardware may void the inspection.
+    - Teams are advised to inform the organizers prior to these changes.
+- When a hardware list is submitted as a part of the registration, the car is checked to match these parameters.
+    - Organizers may also approve using cars that do not match their parameters.
+- Car that is not inspected is not allowed to be used in the competition.
+
+
+## Qualification
+
+Qualification is a session testing the autonomous capabilities of the racing car. The goal is to complete a single lap without touching and crashing anything. Anything can be:
+
+    - Track borders
+    - Obstacles
+    - Other cars
+
+- Qualification is done with a single racing car on the track.
+- Only inspected car can be used in the Qualification.
+    - In case the team intends to use multiple cars during the competition, they have to qualify with all of them.
+
+- The car can qualify during a practice session.
+
+- The Qualification may be merged with Time Trial.
+    - In this case the obstacle avoidance capability has to be checked separately during a dedicated session, e.g., during Practice.
+
+- There are no penalties. Touching and/or crashing results into another try. (Up to the time limit.)
+    - Teams may manually place the car to the starting line.
+
+- Organizers might add more slots based on the success rate of the teams.
 
 
 ## Time Trial
